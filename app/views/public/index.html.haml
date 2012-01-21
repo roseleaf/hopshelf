@@ -2,7 +2,7 @@
 %link{:media => "screen", :rel => "StyleSheet", :src => "home.css", :type => "text/css"}/
 %html
   %head
-    %title Welcome to Hopshelf
+    %title Welcome to whiteshelf
   %body
     #page
       #sidebar
@@ -12,11 +12,12 @@
             %h3 There will be some links here
             %ul.links
               %li
-                %a{:href => "http://guides.rubyonrails.org/"} Regions
+                %a{:href => "/region/"} Regions
               %li
-                %a{:href => "http://api.rubyonrails.org/"} Subjects
+                %a{:href => "/region/"} Subjects
               %li
-                %a{:href => "/users/"} Others Near You
+                - if current_user
+                  %a{:href => "/users/"} Others Near You
               %li
                 - if current_user
                   %a.linky= link_to "Go to Your Shelf", user_path(current_user.id)
