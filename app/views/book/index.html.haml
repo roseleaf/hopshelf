@@ -1,0 +1,11 @@
+!!!
+#bookshelf.clearfix
+  %br/
+  - @books.each do |message|
+    %b
+      %div.blip
+        = book.poster.username
+        \:
+        = book.title
+        %br/
+  %br/

@@ -1,12 +1,14 @@
 Hopshelf::Application.routes.draw do
 
-  get "home/index"
+  # get "home/index"
 
   resources :users, :user_sessions, :book, :region, :request, :response
   match 'login' => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
-  match 'users/:id/message/' => 'users#message', :as => :message_user
-  root  :to => "home#index"
+  match 'users/:id/book/' => 'users#book', :as => :book_user
+  match 'new_book' => 'Books#new'
+  match 'all' => "Books#index", :as => "all_books"
+  match ':poster_id' => 'Book#index', :as => 'user_books'
 
   # match 'conversation/:receiver_id' => 'conversation#show'
 
