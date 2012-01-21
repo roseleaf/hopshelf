@@ -5,3 +5,41 @@
  *= require_self
  *= require_tree . 
 */
+html, body {    
+   height: 100%; 
+}
+
+.nav{
+  margin-top: 4px;
+  margin-left: 10px;
+}
+
+#container {
+  height: auto;
+  overflow: auto;
+  margin-top: 30px;
+}
+
+h1 { 
+font-family: Verdana, sans-serif; 
+font: normal;
+color: #73715b;
+}
+h2 { 
+font-family: Verdana, sans-serif; 
+font: normal;
+color: #73715b;
+}
+
+.header{
+       position: absolute;
+       top: 0;
+       left: 0;
+       height: 26px;
+       background-image: url("ribbonlong.png");
+       width: 100%;
+       padding-bottom: -20px;
+/*       opacity: 0.5;
+       -moz-opacity: 0.5;
+       filter:alpha(opacity=5);*/
+     }

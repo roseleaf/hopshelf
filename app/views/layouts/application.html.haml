@@ -1,11 +1,26 @@
 !!!
 %html
-  %head
-    %title Hopshelf
-    = stylesheet_link_tag    "application"
-    = javascript_include_tag "application"
-    = csrf_meta_tags
-  %body
-    - if flash[:notice]
-      #notice= flash[:notice]
-    = yield
+    %head
+        %title
+            Hopshelf
+        = stylesheet_link_tag "application"
+        = javascript_include_tag "application"
+        = csrf_meta_tags
+    %body
+        .header
+            .nav
+                - if current_user
+                    %a.linky= link_to "Edit Profile", edit_user_path(current_user.id)
+                    %a.linky= link_to "Logout", :logout
+                -else
+                    %a.linky= link_to "Register", new_user_path
+                    %a.linky= link_to "Login", :login
+                .greet
+                    -if current_user
+                        Welcome,
+                        =current_user.username.capitalize
+   
+        #container 
+            .content
+                = yield
+    .footer

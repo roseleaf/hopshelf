@@ -5,18 +5,11 @@
     %title Welcome to Hopshelf
   %body
     #page
-      .nav
-        - if current_user
-          %a.linky= link_to "Edit Profile", edit_user_path(current_user.id)
-          %a.linky= link_to "Logout", :logout
-        -else
-          %a.linky= link_to "Register", new_user_path
-          %a.linky= link_to "Login", :login
       #sidebar
-        %img{:src => "/assets/archives-01.png"}/
+        %img.logo{:src => "/assets/books.png"}/
         %ul#sidebar-items
           %li
-            %h3 There will be some links
+            %h3 There will be some links here
             %ul.links
               %li
                 %a{:href => "http://guides.rubyonrails.org/"} Regions
@@ -30,18 +23,18 @@
 
       #content
         #header
-          %h1 This is Hopshelf
+          %h1 whiteshelf
           %h2 Where you can lend and borrow books in your neighborhood!
         #getting-started
           %h1 An Open Online Community of Local People who Read
-          %h2 If you&rsquo;re new to Hopshelf, it's easy to get in the Loop!
+          %h2 If you&rsquo;re new to Whiteshelf, it's easy to get in the Loop!
           %ol
             %li
-              %h2 Sign up in your region
+              %h2 Sign up 
               %p In seconds you will become part of a local network of readers
             %li
               %h2 Furnish your own bookshelf
-              %p Show people what kind of books you own, and tell everyone what you think of them!
+              %p Show people what kind of books you own, and tell everyone what you think of them
             %li
               %h2 Search bookshelves in your area!
               %p See what books are in shelves near you, and when you find one you want to read, ask to borrow or trade!
