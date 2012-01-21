@@ -1,0 +1,2 @@
+module ResponsePageHelper
+end

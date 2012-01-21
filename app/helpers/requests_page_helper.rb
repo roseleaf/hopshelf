@@ -1,0 +1,2 @@
+module RequestsPageHelper
+end
