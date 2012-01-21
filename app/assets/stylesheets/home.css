@@ -46,9 +46,9 @@ a:hover {
 
 #content {
   float: left;
-  background-color: white;
-  border: 3px solid #aaa;
-  border-top: none;
+  background-image: url("Wood_Poplar.png");
+/*  border: 3px solid #aaa;
+*/  border-top: none;
   padding: 25px;
   width: 500px;
 }

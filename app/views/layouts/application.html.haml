@@ -2,12 +2,10 @@
 %html
   %head
     %title Hopshelf
-    = stylesheet_link_tag    "application" #maybe should change to :all
-    = javascript_include_tag "application" #perhaps replace with :defaults
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    #nav
-        %= link_to "Register", new_user_path
-    #container 
-        .content
-            = yield
+    - if flash[:notice]
+      #notice= flash[:notice]
+    = yield

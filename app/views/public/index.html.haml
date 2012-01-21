@@ -22,6 +22,12 @@
                 %a{:href => "http://guides.rubyonrails.org/"} Regions
               %li
                 %a{:href => "http://api.rubyonrails.org/"} Subjects
+              %li
+                %a{:href => "/users/"} Others Near You
+              %li
+                - if current_user
+                  %a.linky= link_to "Go to Your Shelf", user_path(current_user.id)
+
       #content
         #header
           %h1 This is Hopshelf

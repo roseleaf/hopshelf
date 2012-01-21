@@ -1,11 +1,14 @@
-!!!
 #bookshelf.clearfix
-  %br/
-  - @books.each do |message|
-    %b
-      %div.blip
-        = book.poster.username
-        \:
-        = book.title
-        %br/
-  %br/
+  %table
+    %tr
+      %th Book Title
+      %th Author
+    - books = Book.all
+    - books.each do |book|
+      %tr
+        %td= link_to book.title, book
+        %td= book.author
+        %td= link_to "Edit", edit_book_path(book)
+        %td= link_to "Remove", book, :method => :delete
+  - if books.empty?
+    %em No books on this shelf yet

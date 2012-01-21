@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %b Username:
+%h1= @user.username
+%p
+  Here will be some info on this user
+%p
+  %b Email:
+  = @user.email
+= link_to 'Edit', edit_user_path(@user)
+|
+#{link_to 'Back', users_path} |
+#{link_to 'Home', :root}
