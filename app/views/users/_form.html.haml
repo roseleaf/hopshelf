@@ -7,6 +7,7 @@
       %ul
         - @user.errors.full_messages.each do |msg|
           %li= msg
+  %h2 The Essential Details        
   .field
     = f.label :username
     %br/
@@ -23,5 +24,24 @@
     = f.label :password_confirmation
     %br/
     = f.password_field :password_confirmation
+  .field
+    = f.label :region
+    %br/
+    = f.text_field :region
+
+  %h2.blip Optionally, create a little profile of yourself here   (You can do it later if you prefer, but you are right here!)
+  .field
+    = f.label "Interests, kind of things you read"
+    %br/
+    = f.text_area :personal
+  .field
+    = f.label "Location, a general idea of your whereabouts (not too specific)"
+    %br/
+    = f.text_field :location
+  .field
+    = f.label "When might typically be a good time for other book-readers to meet up?"
+    %br/
+    = f.text_field :goodtime
+
   .actions
     = f.submit

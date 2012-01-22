@@ -2,8 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-
 .show_hide {
   display:none;
 }
@@ -17,4 +15,8 @@
 
 .thought {
   color: #8c8b7f;
+}
+
+.blip{
+  width: 550px;
 }
