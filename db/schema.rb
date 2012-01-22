@@ -10,15 +10,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120121020707) do
+ActiveRecord::Schema.define(:version => 20120121233414) do
 
   create_table "books", :force => true do |t|
+    t.integer  "poster_id"
+    t.text     "title"
+    t.text     "description"
+    t.text     "author"
+    t.text     "genre"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "description"
-    t.text     "title"
-    t.text     "author"
-    t.integer  "poster_id"
   end
 
   create_table "regions", :force => true do |t|

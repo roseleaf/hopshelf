@@ -1,13 +1,20 @@
 %p#notice= notice
+- if is_me? @user.id
+  %h1 THIS IS ME
 %p
-  %b Username:
-%h1= @user.username
+  %h1= @user.username.capitalize
 %p
   Here will be some info on this user
 %p
   %b Email:
   = @user.email
-= link_to 'Edit', edit_user_path(@user)
-|
-#{link_to 'Back', users_path} |
-#{link_to 'Home', :root}
+- if is_me? @user.id
+  = link_to 'Edit', edit_user_path(@user)
+%p
+
+%span#messagebox
+  .link=link_to 'See Bookshelf', :book_user
+%br
+  .link=link_to 'Home', :root
+  .link=link_to 'Back to Mates', :users
+  
