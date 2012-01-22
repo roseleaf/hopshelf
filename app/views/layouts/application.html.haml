@@ -4,22 +4,22 @@
         %title
             Hopshelf
         = stylesheet_link_tag "application"
-        = javascript_include_tag "application"
+        = javascript_include_tag :defaults, "application"
         = csrf_meta_tags
     %body
         .header
             .nav
-                - if current_user
-                    %a.linky= link_to "Edit Profile", edit_user_path(current_user.id)
-                    %a.linky= link_to "Logout", :logout
-                -else
-                    %a.linky= link_to "Register", new_user_path
-                    %a.linky= link_to "Login", :login
                 .greet
                     -if current_user
                         Welcome,
                         =current_user.username.capitalize
-   
+                .linx
+                    - if current_user
+                        %a= link_to "Edit Profile", edit_user_path(current_user.id)
+                        %a= link_to "Logout", :logout
+                    -else
+                        %a= link_to "Register", new_user_path
+                        %a= link_to "Login", :login   
         #container 
             .content
                 = yield

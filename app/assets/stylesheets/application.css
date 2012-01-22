@@ -14,10 +14,28 @@ html, body {
   margin-left: 10px;
 }
 
+.linx{
+  float: left;
+  margin-left: 10px;
+}
+
+.greet{
+  margin-top: 0px;
+  margin-left: 0px;
+  float: left;
+}
+
+a  {color: #333}
+a:hover {
+  background-color: #8f8d72;
+  color: white;
+  text-decoration: none;
+}
+
 #container {
   height: auto;
   overflow: auto;
-  margin-top: 30px;
+  margin-top: 35px;
 }
 
 h1 { 

@@ -28,9 +28,9 @@ header h2{
   margin-top: -13px;
 }
 
-a  {color: #03c}
+a  {color: #333}
 a:hover {
-  background-color: #03c;
+  background-color: #8f8d72;
   color: white;
   text-decoration: none;
 }
@@ -59,7 +59,7 @@ a:hover {
   float: left;
   background-image: url("Wood_Poplar.png");
 /*  border: 3px solid #aaa;
-*/  border-top: none;
+*/border-top: none;
   padding: 25px;
   width: 500px;
 }
@@ -151,7 +151,7 @@ a:hover {
   color: #5e5d4b;
   margin-bottom: 25px;
 }
-#getting-started ol {
+#getting-started ul {
   margin-left: 0;
   padding-left: 0;
 }
@@ -164,10 +164,10 @@ a:hover {
   margin: 0;
   font-weight: normal;
   font-size: 18px;
-  color: #5e5d4b;
+  color: #8f8d72;
 }
 #getting-started li p {
-  color: #555;
+  color: #5E5D4B;
   font-size: 13px;
 }
 

@@ -6,6 +6,7 @@ Hopshelf::Application.routes.draw do
   match 'login' => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
   match 'users/:id/book/' => 'users#book', :as => :book_user
+  match 'users/:id/book/:book_id/' => 'book#bookpage', :as => :bookpage_book
   # match 'new_book' => 'Books#new'
   # match 'all' => "Books#index", :as => "all_books"
   # match ':poster_id' => 'Book#index', :as => 'user_books'

@@ -1,0 +1,16 @@
+%h1 From The Bookshelf of #{@user.username.capitalize}
+%p#notice= notice
+#bookshelf.clearfix
+  %br/
+  - @books.each do |book|
+    %b
+      %div.blip
+        = book.title
+        by
+        = book.author
+        in
+        =book.genre
+        What I thought of it:
+        =book.description
+        %br/
+  %br/

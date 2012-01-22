@@ -4,15 +4,20 @@
   %br/
   - @books.each do |book|
     %b
-      %div.blip
+      .blip
         = book.title
         by
         = book.author
         in
         =book.genre
+        %p.thought #{@user.username.capitalize}'s thoughts on this
+        .toggle
+          =book.description
         %br/
   %br/
   %br/
+
+
 
   -if is_me? @user.id
     .entry

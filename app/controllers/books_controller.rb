@@ -12,6 +12,10 @@ class BooksController < ApplicationController
   #     redirect_to books_path
   #   end
   # end
+  def bookpage
+    @book = Book.find(params[:id])
+  end
+
   def create
     @book = Book.new(params[:book])
 
