@@ -1,10 +1,13 @@
 Hopshelf::Application.routes.draw do
 
-  resources :users, :user_sessions, :books, :regions, :request, :response
+  resources :users, :user_sessions, :books, :regions, :request, :response, :contact
   match 'login' => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
   match 'users/:id/books/' => 'users#books', :as => :book_user
-  
+  match 'regions/:id' => 'regions#users', :as => :user_regions
+  match 'contact/' => 'contact#show', :as => :contact
+  # match 'contact/new' => 'contact#new', :as => :contact_new
+
   # match 'users/:id/book/:book_id/' => 'book#bookpage', :as => :bookpage_book
 
   # match 'new_book' => 'Books#new'

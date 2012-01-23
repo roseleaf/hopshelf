@@ -74,6 +74,21 @@ color: #73715b;
        border-bottom: 5px solid #73715b;
      }
 
+.box{
+  background-image: url(groovepaper.png);
+  padding: 10px;
+  margin-left: 5px;
+  margin-top: 5px;
+  height: auto;
+  margin-bottom: 18px;
+  -moz-box-shadow:    1px 3px 5px 6px #ccc;
+  -webkit-box-shadow: 1px 3px 5px 6px #ccc;
+  box-shadow:         1px 3px 5px 6px #ccc;
+  border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+
+
 /*.shel {
    height: 150px;
    position: relative;

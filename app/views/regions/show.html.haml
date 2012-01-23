@@ -1,0 +1,15 @@
+.flip
+  .box
+    %h2.santa Bookshelves in #{@region.name}:
+  
+  .blip
+    - @users.each do |user|
+      %tr
+        %td= user.username.capitalize
+        %td= link_to 'Show', user
+        %br/
+        %br/
+
+    =link_to "Home", :root 
+    |
+    =link_to "Back", "/regions/"
