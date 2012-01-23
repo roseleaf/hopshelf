@@ -1,36 +1,39 @@
-.container
-  %h1.shelfname The Bookshelf of #{@user.username.capitalize}
-  %p#notice= notice
-  #bookshelf.clearfix
-    %br/
-    - @books.each do |book|
-      %b
-        .blip
-          = book.title
-          by
-          = book.author
-          in
-          =book.genre
+- if !current_user
+  %h2 Hi! Please log in to see the goods. :)
+-else
+  .container
+    %h1.shelfname The Bookshelf of #{@user.username.capitalize}
+    %p#notice= notice
+    #bookshelf.clearfix
+      %br/
+      - @books.each do |book|
+        %b
+          .blip
+            = book.title
+            by
+            = book.author
+            in
+            =book.genre
 
-          - if is_owner? book.poster_id
-            = link_to 'Edit', edit_book_path(book) 
-          /   = link_to 'Edit', edit_book_path(@book)
-          %p.thought #{@user.username.capitalize}'s thoughts on this
-          .toggle
-            =book.description
-          %br/
-    %br/
-    %br/
-
-
-
-    -if is_me? @user.id
-      .entry
-        %h2 Put a New Book on Your Shelf
-        =render 'books/bookform'
+            - if is_owner? book.poster_id 
+              = link_to 'Edit', edit_book_path(book) 
+            /   = link_to 'Edit', edit_book_path(@book)
+            %p.thought #{@user.username.capitalize}'s thoughts on this
+            .toggle
+              =book.description
+            %br/
+      %br/
+      %br/
 
 
-  %br
-  .link=link_to 'Home', :root
-  .link=link_to 'Back to Friend List', :users
-  .shelf
+
+      -if is_me? @user.id
+        .entry
+          %h2 Put a New Book on Your Shelf
+          =render 'books/bookform'
+
+
+    %br
+    .link=link_to 'Home', :root
+    .link=link_to 'Back to Friend List', :users
+    .shelf
