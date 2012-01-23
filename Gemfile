@@ -9,7 +9,9 @@ gem 'mysql2'
 
 gem 'json'
 
-gem 'contact_us', '~> 0.1.4'
+gem 'contact_us', '~> 0.1.5'
+
+gem "formtastic", "~> 2.0.2"
 
 
 # Gems used only for assets and not required

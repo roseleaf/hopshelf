@@ -5,7 +5,7 @@ Hopshelf::Application.routes.draw do
   match 'logout' => 'user_sessions#destroy', :as => :logout
   match 'users/:id/books/' => 'users#books', :as => :book_user
   match 'regions/:id' => 'regions#users', :as => :user_regions
-  match 'contact/' => 'contact#show', :as => :contact
+
   # match 'contact/new' => 'contact#new', :as => :contact_new
 
   # match 'users/:id/book/:book_id/' => 'book#bookpage', :as => :bookpage_book

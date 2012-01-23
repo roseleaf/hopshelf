@@ -117,7 +117,8 @@ PLATFORMS
 DEPENDENCIES
   authlogic
   coffee-rails (~> 3.1.1)
-  contact_us (~> 0.1.4)
+  contact_us (~> 0.1.5)
+  formtastic (~> 2.0.2)
   haml
   jquery-rails
   json

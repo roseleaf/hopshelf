@@ -1,0 +1,14 @@
+.box.flip
+  %h1= t('.contact_us')
+.flip
+  %h2 If you have feedback to give on this website, please feel free to give it!
+= semantic_form_for @contact, :url => contacts_path do |f|
+  = f.input :email, :label => t('.email')
+  = f.input :message, :as => :text, :label => t('.message')
+  = f.commit_button t('.submit'), :button_html => { :alt => t('.submit'), :id => 'contact_us_contact_submit', :title => t('.submit') }
+
+%br
+%br
+.link=link_to 'Home', :root
+%br
+%br

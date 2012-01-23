@@ -1,5 +1,7 @@
 - if !current_user
   %h2 Hi! Please log in to see the goods. :)
+  .link=link_to 'Home', :root
+
 -else
   .container
     %h1.shelfname The Bookshelf of #{@user.username.capitalize}

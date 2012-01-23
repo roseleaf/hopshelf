@@ -17,7 +17,7 @@
                 %a{:href => "/region/"} Subjects
               %li
                 - if current_user
-                  %a{:href => "/users/"} Others Near You
+                  %a{:href => "/regions/#{current_user.region_id}"} Others Near You
               %li
                 - if current_user
                   %a.linky= link_to "Go to Your Shelf", user_path(current_user.id)
