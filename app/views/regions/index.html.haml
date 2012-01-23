@@ -1,0 +1,11 @@
+.flip
+  %h2 Here is a List of the Regions You Can Currently Connect on Whiteshelf In:
+  .blip
+    - @regions.each do |region|
+      %tr
+        %td= region.name
+        %td= link_to 'Show', region
+        %br/
+        %br/
+
+=link_to "Home", :root

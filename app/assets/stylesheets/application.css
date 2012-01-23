@@ -7,7 +7,10 @@
 */
 html, body {    
    height: 100%; 
+   background-image: url(fabric_plaid.png);
 }
+
+
 
 .nav{
   margin-top: 4px;
@@ -36,15 +39,26 @@ a:hover {
   height: auto;
   overflow: auto;
   margin-top: 35px;
+  padding-bottom: -100px;
+}
+.content{
+  overflow: auto;
+  padding-bottom: -130px;
+  margin-bottom: 0px;
+  margin-top: 16px;
+  margin-left: 20px;
+  position: relative;
 }
 
 h1 { 
-font-family: Verdana, sans-serif; 
+font-family: Georgia, sans-serif; 
 font: normal;
 color: #73715b;
 }
 h2 { 
-font-family: Verdana, sans-serif; 
+font-family: Georgia, serif; 
+font-weight: 100;
+line-height: 25px;
 font: normal;
 color: #73715b;
 }
@@ -53,11 +67,23 @@ color: #73715b;
        position: absolute;
        top: 0;
        left: 0;
-       height: 26px;
+       height: 30px;
        background-image: url("ribbonlong.png");
        width: 100%;
        padding-bottom: -20px;
-/*       opacity: 0.5;
-       -moz-opacity: 0.5;
-       filter:alpha(opacity=5);*/
+       border-bottom: 5px solid #73715b;
      }
+
+/*.shel {
+   height: 150px;
+   position: relative;
+   margin-top: 110px;
+   clear: both;
+   margin-left: 70px;
+   margin-bottom: auto;
+   width: 100%;
+   background-image: url("shelf.png");
+   opacity: 0.5;
+       -moz-opacity: 0.5;
+       filter:alpha(opacity=5);
+}*/

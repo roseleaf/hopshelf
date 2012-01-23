@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120122090927) do
+ActiveRecord::Schema.define(:version => 20120123032407) do
 
   create_table "books", :force => true do |t|
     t.integer  "poster_id"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(:version => 20120122090927) do
   create_table "regions", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "name"
+    t.integer  "res_id"
   end
 
   create_table "reponse_forms", :force => true do |t|
@@ -60,10 +62,10 @@ ActiveRecord::Schema.define(:version => 20120122090927) do
     t.string   "persistence_token"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "region"
     t.text     "location"
     t.text     "personal"
     t.text     "goodtime"
+    t.text     "region_id"
   end
 
 end

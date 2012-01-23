@@ -1,13 +1,14 @@
 class UsersController < ApplicationController
   # GET /users
   # GET /users.json
-  def book
-    @user = User.find(params[:id])
-    @books = Book.where("(poster_id =?)", @user.id)
-    @book = Book.new
-  end
+  # def book
+  #   @user = User.find(params[:id])
+  #   @books = Book.where("(poster_id =?)", @user.id)
+  #   @book = Book.new
+  # end
 
   def index
+    @books = Book.all
     @users = User.all
 
     respond_to do |format|
@@ -20,6 +21,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
+    @books = Book.all
 
     respond_to do |format|
       format.html # show.html.erb
@@ -27,9 +29,24 @@ class UsersController < ApplicationController
     end
   end
 
+  def books
+    @user = User.find(params[:id])
+
+    # @books = Book.find(params[:id])
+    @books = Book.where("(poster_id = ?)", @user.id)
+    @book = Book.new
+
+    respond_to do |format|
+      format.html # show html.erb
+      format.xml { render :xml => @book }
+      format.json {render :json => @book}
+    end
+  end
+
   # GET /users/new
   # GET /users/new.json
-  def new
+  def new 
+    @regions = Region.all
     if !current_user || is_admin?
       @user = User.new
 

@@ -7,7 +7,7 @@ body {
   margin-bottom: 25px;
   padding: 0;
   background-color: #f0f0f0;
-  font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
+  font-family: Georgia;
   font-size: 13px;
   color: #333;
 }
@@ -37,7 +37,7 @@ a:hover {
 
 
 #page {
-  background-color: #fff;
+  background-image: url(fabric_plaid.png);
   width: 750px;
   margin: 0;
   margin-left: auto;
@@ -85,11 +85,12 @@ a:hover {
   height: 90px;
 }
 #header h1, #header h2 {margin: 3px}
+
 #header h2 {
-  color: #8f8d72;
+  color: #73715B;
   font-weight: normal;
   font-size: 16px;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 
@@ -99,6 +100,22 @@ a:hover {
   font-size: 14px;
   color: #8f8d72;
 }
+
+.introbox{
+  width: 380px;
+  height: 140px;
+  background-image: url(groovepaper.png);
+  padding: 10px;
+  margin-left: -5px;
+  -moz-box-shadow:    3px 3px 5px 6px #ccc;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  box-shadow:         3px 3px 5px 6px #ccc;
+  border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+}
+
+
 
 #about-content {
   background-color: #ffd;
@@ -112,27 +129,6 @@ a:hover {
   font-size: 11px;
   border-collapse: collapse;
 }
-#about-content td {
-  padding: 10px;
-  padding-top: 3px;
-  padding-bottom: 3px;
-}
-#about-content td.name  {color: #555}
-#about-content td.value {color: #000}
-
-#about-content ul {
-  padding: 0;
-  list-style-type: none;
-}
-
-#about-content.failure {
-  background-color: #fcc;
-  border: 1px solid #f00;
-}
-#about-content.failure p {
-  margin: 0;
-  padding: 10px;
-}
 
 
 #getting-started {
@@ -140,16 +136,20 @@ a:hover {
   margin-top: 25px;
   padding-top: 15px;
 }
+
 #getting-started h1 {
   margin: 0;
-  font-size: 20px;
+  font-size: 25px;
+  line-height: 29px;
+  font-color: #5E5D4B;
 }
+
 #getting-started h2 {
   margin: 0;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: normal;
   color: #5e5d4b;
-  margin-bottom: 25px;
+  margin-bottom: 5px;
 }
 #getting-started ul {
   margin-left: 0;
@@ -173,6 +173,7 @@ a:hover {
 
 
 #sidebar ul {
+  font-family: Georgia serif;
   margin-left: 0;
   padding-left: 0;
 }
@@ -188,8 +189,4 @@ a:hover {
 }
 #sidebar ul.links li {
   margin-bottom: 5px;
-}
-
-.filename {
-  font-style: italic;
 }

@@ -2,13 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+     
 .show_hide {
   display:none;
 }
 
 .slidingDiv {
   max-height:100%;
-  background-color: #73715b;
+  background-color: #efedd8;
   padding:20px;
   margin-top:10px;
 }
@@ -19,4 +21,8 @@
 
 .blip{
   width: 550px;
+}
+
+.flip{
+  width: 300px;
 }

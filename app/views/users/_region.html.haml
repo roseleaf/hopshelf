@@ -1,0 +1,16 @@
+  %h2.blip Optionally, create a little profile of yourself here   (You can do it later if you prefer, but you are right here!)
+  .field
+    = f.label "Interests, kind of things you read"
+    %br/
+    = f.text_area :personal
+  .field
+    = f.label "Location, a general idea of your whereabouts (not too specific)"
+    %br/
+    = f.text_field :location
+  .field
+    = f.label "When might typically be a good time for other book-readers to meet up?"
+    %br/
+    = f.text_field :goodtime
+
+  .actions
+    = f.submit

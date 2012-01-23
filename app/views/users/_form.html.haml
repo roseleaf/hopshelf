@@ -25,9 +25,13 @@
     %br/
     = f.password_field :password_confirmation
   .field
+
+  .field
     = f.label :region
     %br/
-    = f.text_field :region
+  .field
+    = collection_select(:user, :region_id, @regions, :id, :name, :prompt => true)
+  
 
   %h2.blip Optionally, create a little profile of yourself here   (You can do it later if you prefer, but you are right here!)
   .field
