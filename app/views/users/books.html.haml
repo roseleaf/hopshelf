@@ -14,8 +14,7 @@
             = book.title
             by
             = book.author
-            in
-            =book.genre
+            
 
             - if is_owner? book.poster_id 
               = link_to 'Edit', edit_book_path(book) 

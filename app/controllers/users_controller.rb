@@ -31,6 +31,7 @@ class UsersController < ApplicationController
 
   def books
     @user = User.find(params[:id])
+    @genre = Genre.all
 
     # @books = Book.find(params[:id])
     @books = Book.where("(poster_id = ?)", @user.id)

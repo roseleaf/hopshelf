@@ -15,10 +15,19 @@
     = f.label :text, "Author"
     %br/
     =f.text_field :author
+  / .field
+  /   = f.label :text, "Genre"
+  /   %br/
+  /   =f.text_field :genre
+  
+
   .field
-    = f.label :text, "Genre"
+    = f.label :genre
     %br/
-    =f.text_field :genre
+  .field
+    = collection_select(:book, :genre_id, Genre.all, :id, :name, :prompt => true)
+  
+
   .field
     = f.label :text, "Brief Description"
     %br/

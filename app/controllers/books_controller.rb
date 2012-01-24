@@ -26,6 +26,7 @@ class BooksController < ApplicationController
   #   end
   # end
   def new
+    @genres = Genre.all
     @books = Book.where("(poster_id = ?)", @user.id)
     @users = User.all
     respond_to do |format|
@@ -40,6 +41,7 @@ class BooksController < ApplicationController
   end
 
   def create
+    @genres = Genre.all
     @book = Book.new(params[:book])
 
     if @book.save
@@ -53,6 +55,7 @@ class BooksController < ApplicationController
 
   def update
     @book = Book.find(params[:id])   
+    
    
     respond_to do |format|
       if @book.update_attributes(params[:book])
