@@ -3,5 +3,5 @@
   by
   = @book.author
   in
-
-  
+  = @book.genre.name
+  %a{:href => "/users/#{@book.poster_id}/books"} See this item on the bookshelf

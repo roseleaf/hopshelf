@@ -7,3 +7,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+$(function(){  // $(document).ready shorthand
+  $('.box').hide().fadeIn('normal');
+});
+
+$(function() {
+  $('.genrebox, .shelflink').hide().fadeIn('slow', function() {
+    // Animation complete.
+  });
+});

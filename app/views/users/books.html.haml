@@ -4,7 +4,8 @@
 
 -else
   .container
-    %h1.shelfname The Bookshelf of #{@user.username.capitalize}
+    .box.flip
+      %h1.shelfname The Bookshelf of #{@user.username.capitalize}
     %p#notice= notice
     #bookshelf.clearfix
       %br/
@@ -14,15 +15,18 @@
             = book.title
             by
             = book.author
-            
-
+    
             - if is_owner? book.poster_id 
               = link_to 'Edit', edit_book_path(book) 
             /   = link_to 'Edit', edit_book_path(@book)
             %p.thought #{@user.username.capitalize}'s thoughts on this
             .toggle
               =book.description
-            %br/
+            / -if @books.blank?
+      -if @books.empty?
+        %h2 #{@user.username.capitalize} hasn't filled this shelf yet...
+
+      %br/
       %br/
       %br/
 
@@ -35,6 +39,5 @@
 
 
     %br
-    .link=link_to 'Home', :root
-    .link=link_to 'Back to Friend List', :users
+    %a{:href => "/regions/#{current_user.region_id}"} Back to Neighbor List
     .shelf

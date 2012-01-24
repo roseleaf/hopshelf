@@ -26,4 +26,30 @@
 
 .flip{
   width: 300px;
+  height: 100%;
+}
+
+.shelfname{
+  height: 100%;
+  line-height: 100%;
+  margin-left: 30px;
+}
+
+.shelflink{
+  width: 300px;
+  height: 55px;
+  background-image: url('shelfsmall.png');
+  text-align: center;
+}
+
+.go{
+  padding-top: 26px;
+}
+h1{
+  line-height: 100%;
+}
+
+.info{
+  text-align:center;
+  height: 100%;
 }

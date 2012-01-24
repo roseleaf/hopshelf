@@ -1,0 +1,14 @@
+.flip
+  .box
+    %h2.santa Books in #{@genre.name}:
+  
+  .blip
+    - @books.each do |book|
+      %tr
+        %td= book.title.capitalize
+        %td= link_to 'Show', book
+        %br/
+        %br/
+
+  
+    =link_to "Back", "/genres/"

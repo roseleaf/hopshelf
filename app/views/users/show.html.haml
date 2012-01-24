@@ -1,12 +1,16 @@
 %p#notice= notice
-- if is_me? @user.id
-  %h1 Looking Glass
--else 
-  %h1= @user.username.capitalize
+.info.flip
+  - if is_me? @user.id
+    %h1 Looking Glass
+  -else 
+    %h1= @user.username.capitalize
+  .shelflink
+    .go
+      .link=link_to "See #{@user.username.capitalize}'s Bookshelf", :book_user
 
-.profile.blip
-  %p.info
-    %h3 A little about #{@user.username.capitalize}
+.profile.flip
+  %p
+    %h3.info A little about #{@user.username.capitalize}
     = @user.personal
 
   %p
@@ -20,9 +24,9 @@
   = link_to 'Edit', edit_user_path(@user)
 %p
 
-%span#messagebox
-  .link=link_to "See #{@user.username.capitalize}'s Bookshelf", :book_user
+/ .shelflink
+/   .go
+/     .link=link_to "See #{@user.username.capitalize}'s Bookshelf", :book_user
 %br
-  .link=link_to 'Home', :root
-  .link=link_to 'Back to Friend List', :users
+  %a{:href => "/regions/#{current_user.region_id}"} Back to Neighbor List
   

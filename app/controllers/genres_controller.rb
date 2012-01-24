@@ -28,6 +28,8 @@ class GenresController < ApplicationController
     @genre = Genre.find(params[:id])
     @genres = Genre.where("(genre_id = ?)", @genre.id)
     @genres = Genre.all
+    @books = Book.where("(genre_id = ?)", @genre.id)
+
 
       respond_to do |format|
         format.html # show.html.erb
