@@ -72,16 +72,19 @@ class UsersController < ApplicationController
   end
   # POST /users
   # POST /users.json
+
   def create
     if !current_user || is_admin?
       @user = User.new(params[:user])
 
       respond_to do |format|
         if @user.save
+          UserMailer.welcome_email(@user).deliver
           format.html { redirect_to(:root, :notice => 'Registration successfull.') }
           #format.xml  { render :xml => @user, :status => :created, :location => @user }
         else
           format.html { render :action => "new" }
+          format.json { render :json => @user.errors, :status => :unprocessable_entity }
           #format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
         end
       end

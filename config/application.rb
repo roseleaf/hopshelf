@@ -44,5 +44,8 @@ module Hopshelf
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    #Needs to be changed once you have a domain/host
+    config.action_mailer.default_url_options = { :host => "example.com" } 
   end
 end
