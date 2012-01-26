@@ -1,7 +1,9 @@
-.blip
-  = @book.title
+.blip.box
+  %h2= @book.title
   by
   = @book.author
   in
   = @book.genre.name
+  %br/
+  %br/
   %a{:href => "/users/#{@book.poster_id}/books"} See this item on the bookshelf

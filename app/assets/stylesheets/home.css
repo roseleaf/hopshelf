@@ -26,7 +26,7 @@ header h2{
   height: 196px;
   width: 320px;
   margin-left: -100px;
-  margin-top: -13px;
+  margin-top: -6px;
 }
 
 a  {color: #333}
@@ -63,6 +63,8 @@ a:hover {
 */border-top: none;
   padding: 25px;
   width: 500px;
+  height: 100%;
+  bottom: 0;
 }
 
 #sidebar {

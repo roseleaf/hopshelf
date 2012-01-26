@@ -12,16 +12,21 @@
       - @books.each do |book|
         %b
           .blip
-            = book.title
+            %br/
+            %h2= book.title
             by
             = book.author
-    
+
             - if is_owner? book.poster_id 
-              = link_to 'Edit', edit_book_path(book) 
+              %br
+              = link_to 'Edit this book', edit_book_path(book) 
             /   = link_to 'Edit', edit_book_path(@book)
-            %p.thought #{@user.username.capitalize}'s thoughts on this
+            .thought #{@user.username.capitalize}'s thoughts on this
             .toggle
               =book.description
+              %br/
+              =link_to "Comment or Request to Borrow", "/books/#{book.id}"
+
             / -if @books.blank?
       -if @books.empty?
         %h2 #{@user.username.capitalize} hasn't filled this shelf yet...
@@ -39,5 +44,5 @@
 
 
     %br
-    %a{:href => "/regions/#{current_user.region_id}"} Back to Neighbor List
+    %a{:href => "/regions/#{@user.region_id}"} Back to Neighbor List
     .shelf
