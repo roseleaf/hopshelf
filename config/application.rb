@@ -46,6 +46,15 @@ module Hopshelf
     config.assets.version = '1.0'
 
     #Needs to be changed once you have a domain/host
-    config.action_mailer.default_url_options = { :host => "example.com" } 
+    config.action_mailer.default_url_options = { :host => "localhost:3000" }
+    
+    config.after_initialize do
+    Disqus::defaults[:account] = "shelfwire"
+    # so that the comments will load up in development environment
+    Disqus::defaults[:developer] = false
+    Disqus::defaults[:container_id] = "disqus_thread"
+    Disqus::defaults[:show_powered_by] = false
+    end
+     
   end
 end

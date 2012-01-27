@@ -22,7 +22,7 @@
               = link_to 'Edit this book', edit_book_path(book) 
             /   = link_to 'Edit', edit_book_path(@book)
             .thought #{@user.username.capitalize}'s thoughts on this
-            .toggle
+            #toggle
               =book.description
               %br/
               =link_to "Comment or Request to Borrow", "/books/#{book.id}"

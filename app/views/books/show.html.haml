@@ -1,9 +1,20 @@
-.blip.box
-  %h2= @book.title
-  by
-  = @book.author
-  in
-  = @book.genre.name
-  %br/
-  %br/
-  %a{:href => "/users/#{@book.poster_id}/books"} See this item on the bookshelf
+- if !current_user
+  %h2 Hi! Please log in to see the goods. :)
+  .link=link_to 'Home', :root
+
+-else
+
+  .blip.box.left
+    %h2= @book.title
+    by
+    = @book.author
+    in
+    = @book.genre.name
+    %br/
+    %br/
+    %a{:href => "/users/#{@book.poster_id}/books"} See this item on the bookshelf
+  .request.box 
+    %a{:href => "/users/#{@book.poster_id}"}
+      %h2 Request to Borrow This Book!
+
+  .disqus_thread

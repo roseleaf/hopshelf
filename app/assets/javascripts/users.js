@@ -22,10 +22,10 @@ var hideText='Hide';
 var is_visible = false;
  
 // append show/hide links to the element directly preceding the element with a class of "toggle"
-$('.toggle').prev().append(' (<a href="#" class="toggleLink">'+showText+'</a>)');
+$('#toggle').prev().append(' (<a href="#" class="toggleLink">'+showText+'</a>)');
  
 // hide all of the elements with a class of 'toggle'
-$('.toggle').hide();
+$('#toggle').hide();
  
 // capture clicks on the toggle links
 $('a.toggleLink').click(function() {
@@ -38,11 +38,12 @@ $(this).html( (!is_visible) ? showText : hideText);
  
 // toggle the display - uncomment the next line for a basic "accordion" style
 //$('.toggle').hide();$('a.toggleLink').html(showText);
-$(this).parent().next('.toggle').toggle('slow');
+$(this).parent().next('#toggle').toggle('slow');
  
 // return false so any link destination is not followed
 return false;
  
 });
 });
+
 

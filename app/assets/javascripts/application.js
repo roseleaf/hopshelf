@@ -16,3 +16,6 @@ $(function() {
     // Animation complete.
   });
 });
+
+window.disqus_no_style = true;
+$.getScript("http://disqus.com/forums/rapexegesis/embed.js")
