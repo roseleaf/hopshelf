@@ -79,8 +79,8 @@ class UsersController < ApplicationController
 
       respond_to do |format|
         if @user.save
-          # UserMailer.welcome_email(@user).deliver
-          format.html { redirect_to(:root, :notice => 'Registration successfull.') }
+          UserMailer.welcome_email(@user).deliver
+          format.html { redirect_to(:root, :notice => 'Registration successful.') }
           #format.xml  { render :xml => @user, :status => :created, :location => @user }
         else
           format.html { render :action => "new" }

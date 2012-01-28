@@ -3,8 +3,7 @@
   .link=link_to 'Home', :root
 
 -else
-
-  .blip.box.left
+  .box.left.bookname
     %h2= @book.title
     by
     = @book.author
@@ -13,8 +12,7 @@
     %br/
     %br/
     %a{:href => "/users/#{@book.poster_id}/books"} See this item on the bookshelf
-  .request.box 
+  .request.box.clearfix
     %a{:href => "/users/#{@book.poster_id}"}
       %h2 Request to Borrow This Book!
 
-  .disqus_thread

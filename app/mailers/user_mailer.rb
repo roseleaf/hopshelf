@@ -1,10 +1,10 @@
 class UserMailer < ActionMailer::Base
-  default :from => "roseleaf.red@gmail.com"
+  default :from => "rose@shelfwire.org"
  
   def welcome_email(user)
     @user = user
-    @url  = "http://example.com/login" #Change this when you have a name
-    email_with_name = "#{@user.name} <#{@user.email}>"
+    @url  = "http://localhost:3000/login" #Change this when you have a name
+    email_with_name = "#{@user.username} <#{@user.email}>"
     mail(:to => email_with_name, :subject => "Welcome to Whiteshelf") do |format|
       format.html
       format.text
