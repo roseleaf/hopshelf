@@ -34,23 +34,23 @@ Hopshelf::Application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = {:host => 'localhost:3000'}
   
-  # ActionMailer::Base.smtp_settings = {
-  #   :address => "smtp.sendgrid.net",
-  #   :port => '25',
-  #   :domain => "shelfwire.org",
-  #   :authentication => :plain,
-  #   :user_name => "roseleaf@shelfwire.org",
-  #   :password => "pop909pop"
-  # }
-  
   ActionMailer::Base.smtp_settings = {
     :address => "smtp.sendgrid.net",
     :port => '25',
-    :domain => "nativeobject.com",
+    :domain => "shelfwire.org",
     :authentication => :plain,
-    :user_name => "dustin.hoffman@breefield.com",
-    :password => "ac0rnfalls"
+    :user_name => "roseleaf@shelfwire.org",
+    :password => "pop909pop"
   }
+  
+  # ActionMailer::Base.smtp_settings = {
+  #   :address => "smtp.sendgrid.net",
+  #   :port => '25',
+  #   :domain => "nativeobject.com",
+  #   :authentication => :plain,
+  #   :user_name => "dustin.hoffman@breefield.com",
+  #   :password => "ac0rnfalls"
+  # }
 
   # ...
   # Raise exception on mass assignment protection for Active Record models

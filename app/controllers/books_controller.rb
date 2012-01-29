@@ -34,6 +34,20 @@ class BooksController < ApplicationController
       format.json { render :json => @user }
     end 
   end 
+
+  def message
+    @book = Book.find(params[:book])
+      @books = Book.all
+      # @users = User.find(params[:id])
+      @messages = message.where("(book_id = ?)", @book.id)
+      @message = Message.new
+
+    respond_to do |format|
+      format.html # show html.erb
+      format.xml { render :xml => @message }
+      format.json {render :json => @message}
+    end
+  end
     
   def edit
     @book = Book.find(params[:id])

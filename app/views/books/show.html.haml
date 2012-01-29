@@ -13,6 +13,8 @@
     %br/
     %a{:href => "/users/#{@book.poster_id}/books"} See this item on the bookshelf
   .request.box.clearfix
-    %a{:href => "/users/#{@book.poster_id}"}
-      %h2 Request to Borrow This Book!
+    / %a{:href => :message_book}
+    .link
+      =link_to  'Request to Borrow This Book!', :message_book
+      / %h2 Request to Borrow This Book!
 
