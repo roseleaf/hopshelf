@@ -9,10 +9,9 @@ gem 'mysql2'
 
 gem 'json'
 
-gem 'contact_us', '~> 0.1.5'
-
 gem "formtastic", "~> 2.0.2"
 
+gem 'acts_as_commentable'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -27,8 +26,6 @@ gem 'haml'
 gem 'authlogic'
 
 gem 'jquery-rails'
-
-gem "paperclip", "~> 2.0"
 
 
 # To use ActiveModel has_secure_password

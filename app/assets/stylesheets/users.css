@@ -62,7 +62,8 @@ h1{
   text-align: center;
 }
 .bookname{
-  max-width: 400px;
+  max-width: 600px;
+  min-width: 400px;
   height: auto;
 }
 

@@ -13,18 +13,6 @@ class BooksController < ApplicationController
   #   end
   # end
 
-  # def new 
-  #   @user = User.all
-  #   @book = Book.new
-
-  #     respond_to do |format|
-  #       format.html # new.html.erb
-  #       format.json { render :json => @book }
-  #     end
-  #   else
-  #     redirect_to :root
-  #   end
-  # end
   def new
     @genres = Genre.all
     @books = Book.where("(poster_id = ?)", @user.id)
@@ -48,7 +36,8 @@ class BooksController < ApplicationController
       format.json {render :json => @message}
     end
   end
-    
+  
+      
   def edit
     @book = Book.find(params[:id])
 
@@ -101,6 +90,7 @@ class BooksController < ApplicationController
     #   @user = User.where(:name => params[:poster_id]).first
     #   @books = @user.books
     # end
+
     @books = Book.where("(poster_id = ?)", user.id)
     # render :template => 'users/:id/book' 
     respond_to do |format|
@@ -111,6 +101,9 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
+    @comments = Comment.all
+    @comment = Comment.where("book_id = ?", @book.id)
+  
 
     respond_to do |format|
       format.html # show html.erb

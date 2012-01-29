@@ -10,9 +10,20 @@ html, body {
   background-image: url(fabric_plaid.png);
 }
 
+.commentz{
+  float: left;
+  width: 600px !important;
+}
+
+.singlecomment{
+  margin-left: -35px !important;
+}
 
 a:hover{
   background-color: transparent !important;
+  -moz-text-shadow:      1px 1px #333;
+  -webkit-text-shadow:   1px 1px #333;
+  text-shadow:           1px 1px #333;
 }
 
 .nav{
@@ -114,6 +125,7 @@ h1 {
 .content {
   max-width: 1200px;
   margin: 0 auto;
+  padding-top: 10px;
 }
 
 

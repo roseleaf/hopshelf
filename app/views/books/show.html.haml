@@ -12,9 +12,18 @@
     %br/
     %br/
     %a{:href => "/users/#{@book.poster_id}/books"} See this item on the bookshelf
+
   .request.box.clearfix
-    / %a{:href => :message_book}
-    .link
-      =link_to  'Request to Borrow This Book!', :message_book
-      / %h2 Request to Borrow This Book!
+    %a{:href => "/books/#{@book.id}/message"}
+      %h2 Request to Borrow This Book!
+
+  .commentz  
+    %h2 Comments
+    %p= link_to 'Add a Comment', new_book_comment_path(@book)
+    
+    %ul.comment_list
+      = render :partial => 'comments/comment', :collection => @book.comments
+
+
+  / %IFRAME{:SRC => "/books/#{@book.id}/comment", :TITLE => "Comments"}
 

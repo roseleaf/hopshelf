@@ -61,7 +61,7 @@ class MessagesController < ApplicationController
     else
       # @user = User.find(@message.receiverId)
       # @messages = Message.where("(senderId = ? AND receiverId = ?) OR (senderId = ? AND receiverId = ?)", current_user.id, @book.poster_id, @book.poster_id, current_user.id)
-      render :template => '/' #, message_user_path(@message.receiver_id)
+      render :template => '/users/#{@book.poster_id}/books' #, message_user_path(@message.receiver_id)
       
     end
     

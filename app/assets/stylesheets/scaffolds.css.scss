@@ -43,5 +43,10 @@ div {
     background-color: #c00;
     color: #fff; }
   ul li {
+    list-style-type: none !important;
     font-size: 12px;
      } }
+
+ul {
+  list-style-type: none !important;
+}
