@@ -22,6 +22,7 @@
     = f.hidden_field :receiver_id, :value => @books.poster_id
     = f.hidden_field :receiver, :value => @books.postername
     = f.hidden_field :to_email, :value => @books.postermail
+    = f.hidden_field :sender, :value => current_user.username
 
   .field
     = f.label "Suggest when and where might be good for pick-up"

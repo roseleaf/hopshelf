@@ -17,15 +17,24 @@ class UserMailer < ActionMailer::Base
     email_with_name = "#{@message.receiver} <#{@message.to_email}>"
     mail(:to => email_with_name, :subject => "You have a new Message on Shelfwire!") do |format|
       format.html
+    end
+  end
+
+  def new_comment(comment)
+    @comment = comment
+    @url  = "http://localhost:3000/login" #Change this when you have a name
+    email_with_name = "#{@message.receiver} <#{@message.to_email}>"
+    mail(:to => email_with_name, :subject => "You have a new comment on Shelfwire") do |format|
+      format.html
       format.text
     end
   end
 
-  def new_comment(user)
-    @user = user
-    @url  = "http://localhost:3000/login" #Change this when you have a name
-    email_with_name = "#{@message.receiver} <#{@message.to_email}>"
-    mail(:to => email_with_name, :subject => "You have a new comment on Shelfwire") do |format|
+  def contact_email(contact)
+    @contact = contact
+    @url = "http:localhost:3000/login"
+    email = "roseleaf.red@gmail.com"
+    mail(:to => email, :subject => "Someone on Shelfwire has something to say") do |format|
       format.html
       format.text
     end

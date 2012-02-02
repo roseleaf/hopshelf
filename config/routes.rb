@@ -1,6 +1,6 @@
 Hopshelf::Application.routes.draw do
 
-  resources :users, :user_sessions, :books, :regions, :genres, :messages, :comments
+  resources :users, :user_sessions, :books, :regions, :genres, :messages, :comments, :contacts
   match 'login' => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
   match 'users/:id/books/' => 'users#books', :as => :book_user
@@ -8,8 +8,8 @@ Hopshelf::Application.routes.draw do
   match 'books/:id/message/' => 'messages#new', :as => :message_book
   match 'users/:id/message/' => 'messages#index', :as => :message_user
   match 'books/:id/' => 'comment#new', :as => :comment_book
-  # match 'books/search' => 'books#search', :as => :search_books
-  # match 'books/results' => 'books#all', :as => :all_books
+  match 'contact' => 'contacts#new', :as => :contacts_new
+  match 'contacts' => 'contacts#new'
 
   resources :comments do
     resources :comments
