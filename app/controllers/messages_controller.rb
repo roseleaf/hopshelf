@@ -7,8 +7,10 @@ class MessagesController < ApplicationController
   end
 
   def index
-    @messages = Message.where("(senderId = ? AND receiverId = ?) OR (senderId = ? AND receiverId = ?)", current_user.id, @book.poster_id, @book.poster_id, current_user.id)
-    render :template => '/' #, message_user_path(@message.receiver_id)
+    # @message = Message.find(params[:id])
+    # @user=User.find(params[:receiver_id])
+    @messages = Message.where("(sender_id = ? AND receiver_id = ?) OR (sender_id = ? AND receiver_id = ?)", current_user.id, @user.id, @user.id, current_user.id)
+    # render :template => '/' #, message_user_path(@message.receiver_id)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -53,15 +55,16 @@ class MessagesController < ApplicationController
     @message = Message.new(params[:message])
     @books = Book.find_by_id(:id)
     @book = Book.find_by_id(:book_id)
-  
+    # @user = User.find_by_id(:poster_id)
 
     # respond_to do |format|
     if @message.save
+      UserMailer.new_message(@message).deliver
       redirect_to('/', :notice => 'Message sent!')
     else
       # @user = User.find(@message.receiverId)
-      # @messages = Message.where("(senderId = ? AND receiverId = ?) OR (senderId = ? AND receiverId = ?)", current_user.id, @book.poster_id, @book.poster_id, current_user.id)
-      render :template => '/users/#{@book.poster_id}/books' #, message_user_path(@message.receiver_id)
+      @messages = Message.where("(sender_id = ? AND receiver_id = ?) OR (sender_id = ? AND receiver_id = ?)", current_user.id, @user.id, @user.id, current_user.id)
+      render :template => message_user_path(@message.receiver_id)
       
     end
     
@@ -74,7 +77,7 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.update_attributes(params[:message])
-        format.html { redirect_to @message, :notice => 'Message was successfully updated.' }
+        format.html { redirect_to @message, :notice => 'Message was successfully set.' }
         format.json { head :no_content }
       else
         format.html { render :action => "edit" }

@@ -34,5 +34,7 @@
     =f.text_area :description
 
   = f.hidden_field :poster_id, :value => current_user.id
+  = f.hidden_field :postername, :value => current_user.username
+  = f.hidden_field :postermail, :value => current_user.email
   .actions
     = f.submit "Shelf it"

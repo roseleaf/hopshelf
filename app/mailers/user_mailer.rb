@@ -5,7 +5,27 @@ class UserMailer < ActionMailer::Base
     @user = user
     @url  = "http://localhost:3000/login" #Change this when you have a name
     email_with_name = "#{@user.username} <#{@user.email}>"
-    mail(:to => email_with_name, :subject => "Welcome to Whiteshelf") do |format|
+    mail(:to => email_with_name, :subject => "Welcome to Shelfwire") do |format|
+      format.html
+      format.text
+    end
+  end
+
+  def new_message(message)
+    @message = message
+    @url  = "http://localhost:3000/login" #Change this when you have a name
+    email_with_name = "#{@message.receiver} <#{@message.to_email}>"
+    mail(:to => email_with_name, :subject => "You have a new Message on Shelfwire!") do |format|
+      format.html
+      format.text
+    end
+  end
+
+  def new_comment(user)
+    @user = user
+    @url  = "http://localhost:3000/login" #Change this when you have a name
+    email_with_name = "#{@message.receiver} <#{@message.to_email}>"
+    mail(:to => email_with_name, :subject => "You have a new comment on Shelfwire") do |format|
       format.html
       format.text
     end

@@ -6,8 +6,10 @@ Hopshelf::Application.routes.draw do
   match 'users/:id/books/' => 'users#books', :as => :book_user
   match 'regions/:id' => 'regions#users', :as => :user_regions
   match 'books/:id/message/' => 'messages#new', :as => :message_book
-  match 'users/:id/message/' => 'users#message', :as => :message_user
+  match 'users/:id/message/' => 'messages#index', :as => :message_user
   match 'books/:id/' => 'comment#new', :as => :comment_book
+  # match 'books/search' => 'books#search', :as => :search_books
+  # match 'books/results' => 'books#all', :as => :all_books
 
   resources :comments do
     resources :comments

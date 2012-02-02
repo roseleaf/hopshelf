@@ -1,0 +1,12 @@
+<% if @results.total_entries > 0 %>
+<div id="localLocationList">
+    <ul class="list">
+    <% @results.each do |result| %>
+        <li>
+            <%= display_search_result(result) %>
+        </li>
+    <% end %>
+    </ul>
+    <div class="clear"></div>
+</div>
+<% end %>

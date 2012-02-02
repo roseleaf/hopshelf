@@ -1,0 +1,29 @@
+- if !current_user
+  %h2 Hi! Please log in to see the goods. :)
+  .link=link_to 'Home', :root
+
+-else
+  .box.left.bookname
+    %h2= @book.title
+    by
+    = @book.author
+    in
+    = @book.genre.name
+    %br/
+    %br/
+    %a{:href => "/users/#{@book.poster_id}/books"} See this item on the bookshelf
+
+  .request.box.clearfix
+    %a{:href => "/books/#{@book.id}/message"}
+      %h2 Request to Borrow This Book!
+
+  .commentz  
+    %h2 Comments
+    %p= link_to 'Add a Comment', new_book_comment_path(@book)
+    
+    %ul.comment_list
+      = render :partial => 'comments/comment', :collection => @book.comments
+
+
+  / %IFRAME{:SRC => "/books/#{@book.id}/comment", :TITLE => "Comments"}
+

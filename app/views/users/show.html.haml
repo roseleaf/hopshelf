@@ -18,8 +18,6 @@
     = @user.location
 
 %p
-  %b Email:
-  = @user.email
 - if is_me? @user.id
   = link_to 'Edit', edit_user_path(@user)
 %p

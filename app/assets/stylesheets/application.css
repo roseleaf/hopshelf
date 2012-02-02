@@ -17,6 +17,18 @@ html, body {
 
 .singlecomment{
   margin-left: -35px !important;
+  background-image: url(groovepaper.png);
+  padding-bottom: 15px;
+  padding-left: 15px;
+  margin-left: 5px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  -moz-box-shadow:    inset 0 0 6px #5c5c5c;
+  -webkit-box-shadow: inset 0 0 6px #5c5c5c;
+  box-shadow:         inset 0 0 6px #5c5c5c;
+  border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;  
 }
 
 a:hover{
@@ -62,7 +74,7 @@ a:hover {
 
 #page-wrap{
   overflow: auto;
-  padding-bottom: -130px;
+  padding-bottom: 40px;
   margin-bottom: 0px;
   margin-top: 16px;
   margin-left: 20px;
@@ -123,7 +135,7 @@ h1 {
 }
 
 .content {
-  max-width: 1200px;
+  max-width: 1250px;
   margin: 0 auto;
   padding-top: 10px;
 }
@@ -132,22 +144,23 @@ h1 {
 
 .box{
   background-image: url(groovepaper.png);
+  border: 1px groove #f2f2f2;
   padding: 10px;
   margin-left: 5px;
   margin-top: 5px;
   margin-bottom: 18px;
-  -moz-box-shadow:    1px 3px 5px 6px #ccc;
-  -webkit-box-shadow: 1px 3px 5px 6px #ccc;
-  box-shadow:         1px 3px 5px 6px #ccc;
+  -moz-box-shadow:    2px 2px 5px 1px #ccc;
+  -webkit-box-shadow: 2px 2px 5px 1px #ccc;
+  box-shadow:         2px 2px 5px 1px #ccc;
   border-radius: 15px;
   -moz-border-radius: 15px;
   border-radius: 15px;
 }
 
 .box:hover{
-  -moz-box-shadow:    3px 3px 5px 6px #c2c2c2;
-  -webkit-box-shadow: 3px 3px 5px 6px #c2c2c2;
-  box-shadow:         3px 3px 5px 6px #c2c2c2; 
+  -moz-box-shadow:    2px 3px 4px 3px #c2c2c2;
+  -webkit-box-shadow: 2px 3px 4px 3px #c2c2c2;
+  box-shadow:         2px 3px 4px 3px #c2c2c2; 
 }
 
 
@@ -155,7 +168,7 @@ h1 {
   display:block;
   position:fixed;
   margin-right: 8px;
-  margin-top: 3px;
+  margin-top: 13px;
   top:0;
   right:0;
   width:60px;

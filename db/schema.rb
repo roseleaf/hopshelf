@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120129221759) do
+ActiveRecord::Schema.define(:version => 20120202042923) do
 
   create_table "books", :force => true do |t|
     t.integer  "poster_id"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(:version => 20120129221759) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "genre_id"
+    t.text     "postername"
+    t.string   "postermail"
   end
 
   create_table "comments", :force => true do |t|
@@ -29,6 +31,8 @@ ActiveRecord::Schema.define(:version => 20120129221759) do
     t.string   "commentable_type"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+    t.text     "commenter"
+    t.text     "commentable_name"
   end
 
   add_index "comments", ["commentable_id", "commentable_type"], :name => "index_comments_on_commentable_id_and_commentable_type"
@@ -42,12 +46,15 @@ ActiveRecord::Schema.define(:version => 20120129221759) do
   create_table "messages", :force => true do |t|
     t.string   "subject"
     t.text     "text"
-    t.integer  "senderId"
-    t.integer  "receiverId"
+    t.integer  "sender_id"
+    t.integer  "receiver_id"
     t.text     "plan"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.integer  "book_id"
+    t.text     "receiver"
+    t.string   "to_email"
+    t.text     "sender"
   end
 
   create_table "regions", :force => true do |t|
@@ -75,6 +82,11 @@ ActiveRecord::Schema.define(:version => 20120129221759) do
   create_table "response_pages", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "searches", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "user_sessions", :force => true do |t|

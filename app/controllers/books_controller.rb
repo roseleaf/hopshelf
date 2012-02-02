@@ -27,8 +27,8 @@ class BooksController < ApplicationController
     @book = Book.find(params[:book])
       @books = Book.all
       # @users = User.find(params[:id])
-      @messages = message.where("(book_id = ?)", @book.id)
-      @message = Message.new
+      @messages = Message.where("(book_id = ?)", @book.id)
+      @message = Message.new(params[:message])
 
     respond_to do |format|
       format.html # show html.erb
@@ -83,6 +83,9 @@ class BooksController < ApplicationController
     end
   end
 
+  def search
+    @books = Book.search params[:search]
+  end
 
 
   def index
@@ -90,27 +93,50 @@ class BooksController < ApplicationController
     #   @user = User.where(:name => params[:poster_id]).first
     #   @books = @user.books
     # end
+    # @books = Book.find(params[:search])
+    if params.include? :search 
+      @books= Book..where("name like ?", "%#{params[:search]}%").order(:name)
+    else
+      @books = Book.where("(poster_id = ?)", user.id)
+      # render :template => 'users/:id/book' 
+      respond_to do |format|
+        format.html  # index.html.erb
+        format.json  { render :json => @posts }
+      end
+    end
+  end
 
-    @books = Book.where("(poster_id = ?)", user.id)
-    # render :template => 'users/:id/book' 
+  def search
+    @books = Book.find(params[:search])
+  end   
+
+  def all    
+    @books = Book.search(params[:search]).order('accepted desc') 
+    
     respond_to do |format|
-      format.html  # index.html.erb
-      format.json  { render :json => @posts }
+      format.html { render 'all' }                  # uses the same view as the default index
+      format.xml  { render :xml => @books }
     end
   end
 
   def show
-    @book = Book.find(params[:id])
-    @comments = Comment.all
-    @comment = Comment.where("book_id = ?", @book.id)
-  
+    if params.include? :search 
+      @book= Book.where("title like ?", "%#{params[:search]}%").order(:title)
+    else
+      @book = Book.find(params[:id])
+      @comments = Comment.all
+      @comment = Comment.where("book_id = ?", @book.id)
+    
 
-    respond_to do |format|
-      format.html # show html.erb
-      format.xml { render :xml => @book }
-      format.json {render :json => @book}
+      respond_to do |format|
+        format.html # show html.erb
+        format.xml { render :xml => @book }
+        format.json {render :json => @book}
+      end
     end
   end
+
+
 
   # def edit
   # end

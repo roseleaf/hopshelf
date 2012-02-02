@@ -6,15 +6,14 @@
   - unless @comment.comments.empty?
     %ul.comment_list
       = render :partial => 'comments/comment', :collection => @comment.comments
-a
+
 %h1 Add a Comment
 = form_for [@parent, @comment] do |f|
-  %p
-    = f.label :title
-    %br
-      = f.text_field :title
+
   %p
     = f.label :body
     %br
       = f.text_area :body
+  %p
+    = f.hidden_field :commenter, :value => current_user.username
   %p= f.submit 'add comment'

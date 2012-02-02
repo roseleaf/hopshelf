@@ -1,11 +1,5 @@
 class UsersController < ApplicationController
-  # GET /users
-  # GET /users.json
-  # def book
-  #   @user = User.find(params[:id])
-  #   @books = Book.where("(poster_id =?)", @user.id)
-  #   @book = Book.new
-  # end
+
 
   def index
     @books = Book.all
@@ -15,6 +9,15 @@ class UsersController < ApplicationController
       format.html # index.html.erb
       format.json { render :json => @users }
     end
+  end
+
+  def message
+    # we save the user in this variable (we get the user ID from the URL (the route))
+    @user = User.find(params[:id])
+
+    # Then we write this query to get all the messages sent between user A and B, 
+    @messages = Message.where("(sender_id = ? AND receiver_id = ?) OR (sender_id = ? AND receiver_id = ?)", current_user.id, @user.id, @user.id, current_user.id)
+    @message = Message.new
   end
 
   # GET /users/1

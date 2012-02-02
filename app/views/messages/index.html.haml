@@ -2,9 +2,9 @@
 %table
   %tr
     %th Subject
-    %th Text
-    %th Senderid
-    %th Receiverid
+    %th Message
+    %th From
+    %th To
     %th Plan
     %th
     %th
@@ -13,11 +13,11 @@
     %tr
       %td= message.subject
       %td= message.text
-      %td= message.senderId
-      %td= message.receiverId
+      %td= message.sender
+      %td= message.receiver
       %td= message.plan
       %td= link_to 'Show', message
       %td= link_to 'Edit', edit_message_path(message)
       %td= link_to 'Destroy', message, :confirm => 'Are you sure?', :method => :delete
 %br/
-= link_to 'New Message', new_message_path
+= link_to 'Reply', new_message_path

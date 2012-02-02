@@ -2,18 +2,20 @@
 %p
   %b Subject:
   = @message.subject
-%p
-  %b Text:
+
+  %b Message:
   = @message.text
 %p
-  %b Senderid:
-  = @message.senderId
+  %b From:
+  = @message.sender
 %p
-  %b Receiverid:
-  = @message.receiverId
+  %b To:
+  = @message.receiver
 %p
   %b Plan:
   = @message.plan
+
+
 = link_to 'Edit', edit_message_path(@message)
 |
 \#{link_to 'Back', messages_path}

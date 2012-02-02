@@ -1,6 +1,6 @@
 %li.comment
-  .box.singlecomment
-    %h3= comment.title
+  .singlecomment
+    %h3 <em>#{comment.created_at.strftime("On %d %b. %Y at %H:%M")}</em> <strong> #{comment.commenter} </strong> says:
     .body
       = comment.body
   %p= link_to 'Add a Reply', new_comment_comment_path(comment)

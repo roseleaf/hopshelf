@@ -17,9 +17,11 @@
     (Maybe some contact info)
     %br/
     = f.text_area :text
-    = f.hidden_field :senderId, :value => current_user.id
+    = f.hidden_field :sender_id, :value => current_user.id
     = f.hidden_field :book_id, :value => @books.id
-    = f.hidden_field :receiverId, :value => @books.poster_id
+    = f.hidden_field :receiver_id, :value => @books.poster_id
+    = f.hidden_field :receiver, :value => @books.postername
+    = f.hidden_field :to_email, :value => @books.postermail
 
   .field
     = f.label "Suggest when and where might be good for pick-up"

@@ -1,0 +1,16 @@
+!!!
+
+%h1 Oh hello, #{@message.receiver}! 
+%br
+%h2 #{@message.sender} sent you a message about your book on Shelfwire. 
+%br
+%h3 Subject: #{@message.subject}
+%br
+%p " #{@message.text}.limit(30) "
+%br
+%p To see the full message, the meetup plan, and to respond: 
+= link_to "localhost:3000/messages/#{@message.id}"
+%br Hope you're loving life off the shelf. :)
+%br
+%p -Your friends at 
+%p www.shelfwire.org
