@@ -27,11 +27,10 @@
                         %a= link_to "Contact", :contacts_new
 
 
-        =notice
         #maincontent.fill 
             #page-wrap
                 .content
-
+                    %p#notice= notice
                     = yield
     .footer
     .botright.linkopacity= link_to 'Home', :root

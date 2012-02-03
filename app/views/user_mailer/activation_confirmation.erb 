@@ -1,0 +1,10 @@
+Aw, yes! Your account has been activated.
+
+Click here to login: 
+<%= login_url %>
+
+
+<3
+Your friends at
+www.shelfwire.org
+

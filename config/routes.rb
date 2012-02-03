@@ -10,6 +10,8 @@ Hopshelf::Application.routes.draw do
   match 'books/:id/' => 'comment#new', :as => :comment_book
   match 'contact' => 'contacts#new', :as => :contacts_new
   match 'contacts' => 'contacts#new'
+  match 'activate(/:activation_code)' => 'users#activate', :as => :activate_account
+  match 'send_activation(/:user_id)' => 'users#send_activation', :as => :send_activation
 
   resources :comments do
     resources :comments

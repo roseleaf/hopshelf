@@ -76,25 +76,57 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
 
-  def create
-    if !current_user || is_admin?
-      @user = User.new(params[:user])
 
-      respond_to do |format|
-        if @user.save
-          UserMailer.welcome_email(@user).deliver
-          format.html { redirect_to(:root, :notice => 'Registration successful.') }
-          #format.xml  { render :xml => @user, :status => :created, :location => @user }
-        else
-          format.html { render :action => "new" }
-          format.json { render :json => @user.errors, :status => :unprocessable_entity }
-          #format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
-        end
-      end
-    else
-      redirect_to :root
-    end
+
+# app/controllers/users_controller.rb
+# new create method:
+def create
+  @user = User.new(params[:user])
+
+  if @user.save
+    UserMailer.activation_instructions(@user).deliver
+    flash[:notice] = "Your account has been created. Please check your e-mail for your account activation instructions!"
+    redirect_to root_url
+  else
+    flash[:notice] = "There was a problem creating the user"
+    render :action => :new
   end
+end
+
+def activate
+  @user = User.find_using_perishable_token(params[:activation_code], 1.week) || (raise Exception)
+  
+  raise Exception if @user.active?
+  
+  if @user.activate!
+    UserSession.create(@user, false)
+    @user.send_activation_confirmation!
+    redirect_to account_url
+  else
+    render :action => :new
+  end
+end
+
+
+
+    # if !current_user || is_admin?
+    #   @user = User.new(params[:user])
+
+    #   respond_to do |format|
+    #     if @user.save
+    #       UserMailer.welcome_email(@user).deliver
+    #       format.html { redirect_to(:root, :notice => 'Registration successful.') }
+    #       #format.xml  { render :xml => @user, :status => :created, :location => @user }
+    #     else
+    #       format.html { render :action => "new" }
+    #       format.json { render :json => @user.errors, :status => :unprocessable_entity }
+    #       #format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
+    #     end
+    #   end
+    # else
+  #     redirect_to :root
+  #   end
+  # end
   
 
   # PUT /users/1

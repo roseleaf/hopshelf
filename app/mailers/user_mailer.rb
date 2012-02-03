@@ -1,12 +1,31 @@
 class UserMailer < ActionMailer::Base
-  default :from => "rose@shelfwire.org"
+  default :from => "Shelfwire <rose@shelfwire.org>"
  
-  def welcome_email(user)
-    @user = user
-    @url  = "http://localhost:3000/login" #Change this when you have a name
+  # def welcome_email(user)
+  #   @user = user
+  #   @url  = "http://localhost:3000/login" #Change this when you have a name
+  #   email_with_name = "#{@user.username} <#{@user.email}>"
+  #   mail(:to => email_with_name, :subject => "Welcome to Shelfwire") do |format|
+  #     format.html
+  #     format.text
+  #   end
+  # end
+
+  def activation_instructions(user)
+    @user = user    
+    @account_activation_url = activate_account_url(user.perishable_token)
     email_with_name = "#{@user.username} <#{@user.email}>"
-    mail(:to => email_with_name, :subject => "Welcome to Shelfwire") do |format|
-      format.html
+    mail(:to => email_with_name, :subject => "Activate your account!") do |format|
+      format.text
+    end
+  end
+
+  def activation_confirmation(user)
+    @user = user    
+    @account_activation_url = activate_account_url(user.perishable_token)
+    email_with_name = "#{@user.username} <#{@user.email}>"
+    mail(:to => email_with_name, :subject => "Success! You're in at Shelfwire
+    ") do |format|
       format.text
     end
   end
@@ -32,11 +51,10 @@ class UserMailer < ActionMailer::Base
 
   def contact_email(contact)
     @contact = contact
-    @url = "http:localhost:3000/login"
+    @url = "http:localhost:3000/"
     email = "roseleaf.red@gmail.com"
     mail(:to => email, :subject => "Someone on Shelfwire has something to say") do |format|
       format.html
-      format.text
     end
   end
 
