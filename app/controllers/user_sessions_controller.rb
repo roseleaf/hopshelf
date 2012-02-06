@@ -29,22 +29,20 @@ class UserSessionsController < ApplicationController
 
   def forgot_password
     if current_user
-      redirect_to edit_account_url
-    else
-      @user_session = UserSession.new()
+      redirect_to edit_user_path(current_user)
     end
   end
 
 def forgot_password_lookup_email
   if current_user
-    redirect_to edit_account_url
+    redirect_to edit_user_path(current_user)
   else
-    user = User.find_by_email(params[:user_session][:username])
+    user = User.find_by_email(params[:email])
     if user
       user.send_forgot_password!
       flash[:notice] = "A link to reset your password has been mailed to you."
     else
-      flash[:notice] = "Email #{params[:user_session][:email]} wasn't found.  Perhaps you used a different one?  Or never registered or something?"
+      flash[:notice] = "Email #{params[:email]} wasn't found.  Perhaps you used a different one?  Or never registered or something?"
       render :action => :forgot_password
     end
   end

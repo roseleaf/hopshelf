@@ -37,11 +37,12 @@ Hopshelf::Application.configure do
   
   ActionMailer::Base.smtp_settings = {
     :address => "smtp.sendgrid.net",
-    :port => '25',
     :domain => "shelfwire.org",
-    :authentication => :plain,
     :user_name => "roseleaf",
-    :password => "pop909pop"
+    :password => "pop909pop",
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
   }
   
 
