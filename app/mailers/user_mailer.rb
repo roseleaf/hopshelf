@@ -1,15 +1,7 @@
 class UserMailer < ActionMailer::Base
   default :from => "Shelfwire <rose@shelfwire.org>"
  
-  # def welcome_email(user)
-  #   @user = user
-  #   @url  = "http://localhost:3000/login" #Change this when you have a name
-  #   email_with_name = "#{@user.username} <#{@user.email}>"
-  #   mail(:to => email_with_name, :subject => "Welcome to Shelfwire") do |format|
-  #     format.html
-  #     format.text
-  #   end
-  # end
+
 
   def activation_instructions(user)
     @user = user    
@@ -29,6 +21,27 @@ class UserMailer < ActionMailer::Base
       format.text
     end
   end
+
+  def forgot_password(user)  
+    @reset_password_link = reset_password_url(user.perishable_token)
+    @user = user    
+    @account_activation_url = activate_account_url(user.perishable_token)
+    email_with_name = "#{@user.username} <#{@user.email}>"
+    mail(:to => email_with_name, :subject => "It's ok, you can reset your password!") do |format|
+      format.text
+    end
+
+  rescue Timeout::Error
+    return false
+    
+  end
+
+  def password_reset_instructions(user)  
+    subject       "Password Reset Instructions"  
+    recipients    user.email  
+    sent_on       Time.now  
+    body          :edit_password_reset_url => edit_password_reset_url(user.perishable_token)  
+  end  
 
   def new_message(message)
     @message = message

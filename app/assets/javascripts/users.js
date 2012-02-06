@@ -8,7 +8,7 @@ $(document).ready(function() {
   // initialise the visibility check
   var is_visible = false;
    
-   var toggles = $('#toggle');
+   var toggles = $('.toggle');
 
   // append show/hide links to the element directly preceding the element with a class of "toggle"
   toggles.prev().append(' (<a href="#" class="toggleLink">'+showText+'</a>)');
@@ -27,7 +27,7 @@ $(document).ready(function() {
      
     // toggle the display - uncomment the next line for a basic "accordion" style
     //$('.toggle').hide();$('a.toggleLink').html(showText);
-    $(this).parent().next('#toggle').toggle('slow');
+    $(this).parent().next('.toggle').toggle('slow');
      
     // return false so any link destination is not followed
     return false;

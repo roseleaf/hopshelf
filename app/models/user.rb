@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
   has_many :messages, :as=> :receiver
   acts_as_authentic
 
+  def self.find_by_login_or_email(login)
+    find_by_email(login)
+  end
 
   def active?
     active
@@ -32,5 +35,11 @@ class User < ActiveRecord::Base
 
   def email_address_with_name
     "#{self.name} <#{self.email}>"
+  end
+
+  def send_forgot_password!
+    deactivate!
+    reset_perishable_token!
+    UserMailer.forgot_password(self).deliver
   end
 end

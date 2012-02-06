@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120203025442) do
+ActiveRecord::Schema.define(:version => 20120205091730) do
 
   create_table "books", :force => true do |t|
     t.integer  "poster_id"
@@ -99,6 +99,7 @@ ActiveRecord::Schema.define(:version => 20120203025442) do
   create_table "user_sessions", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "email"
   end
 
   create_table "users", :force => true do |t|
@@ -113,9 +114,11 @@ ActiveRecord::Schema.define(:version => 20120203025442) do
     t.text     "personal"
     t.text     "goodtime"
     t.text     "region_id"
-    t.string   "avatar_file_name"
     t.boolean  "active",            :default => false
     t.string   "perishable_token"
   end
+
+  add_index "users", ["email"], :name => "index_users_on_email"
+  add_index "users", ["perishable_token"], :name => "index_users_on_perishable_token"
 
 end
