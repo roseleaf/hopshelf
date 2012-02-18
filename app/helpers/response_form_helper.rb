@@ -1,2 +1,0 @@
-module ResponseFormHelper
-end

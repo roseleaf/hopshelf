@@ -1,2 +1,0 @@
-class RequestsPageController < ApplicationController
-end
