@@ -19,6 +19,10 @@
   color: #8c8b7f;
 }
 
+#bookshelf{
+  margin-left: 4px;
+}
+
 .blip{
   width: 550px;
   margin-left: 5px;

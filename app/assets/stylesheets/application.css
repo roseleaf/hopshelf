@@ -52,7 +52,7 @@ a:hover{
 
 .greet{
   margin-top: 0px;
-  margin-left: 0px;
+  margin-left: 22px;
   float: left;
 }
 
@@ -72,6 +72,7 @@ a:hover {
   bottom: 0;
 }
 
+
 #page-wrap{
   overflow: auto;
   padding-bottom: 40px;
@@ -86,6 +87,7 @@ a:hover {
   height: 800px;
   background-image: url('mirror.png');
   opacity: 0.2;
+  margin-top: -20px;
   -moz-opacity: 0.2;
   filter:alpha(opacity=2);
   float:right;
@@ -138,6 +140,7 @@ h1 {
   max-width: 1250px;
   margin: 0 auto;
   padding-top: 10px;
+  height: 100%;
 }
 
 

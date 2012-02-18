@@ -52,8 +52,8 @@ class MessagesController < ApplicationController
   # POST /messages
   # POST /messages.json
   def create
-    @message = Message.new(params[:message])
-    @books = Book.find_by_id(:id)
+    @message = Message.new
+    @books = Book.find_by_id(params[:id])
     @book = Book.find_by_id(:book_id)
     # @user = User.find_by_id(:poster_id)
 
