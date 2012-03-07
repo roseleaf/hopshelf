@@ -88,7 +88,7 @@ def create
     flash[:notice] = "Your account has been created. Please check your e-mail for your account activation instructions!"
     redirect_to root_url
   else
-    flash[:notice] = "There was a problem creating the user"
+    flash[:notice] = "There was a problem creating the user account"
     render :action => :new
   end
 end
@@ -101,7 +101,7 @@ def activate
   if @user.activate!
     UserSession.create(@user, false)
     @user.send_activation_confirmation!
-    redirect_to account_url
+    redirect_to :root
   else
     render :action => :new
   end

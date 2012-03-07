@@ -22,4 +22,7 @@ class ApplicationController < ActionController::Base
     def is_me?(user)
         current_user && user && user.to_i == current_user.id
     end
+
+    def slide
+    end
 end

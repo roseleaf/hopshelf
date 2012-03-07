@@ -15,10 +15,11 @@ class UserMailer < ActionMailer::Base
   def activation_confirmation(user)
     @user = user    
     @account_activation_url = activate_account_url(user.perishable_token)
+    # @url = activate_account_url(user.perishable_token)
     email_with_name = "#{@user.username} <#{@user.email}>"
     mail(:to => email_with_name, :subject => "Success! You're in at Shelfwire
-    ") do |format|
-      format.text
+    ") do |format| 
+      format.html
     end
   end
 
@@ -45,7 +46,7 @@ class UserMailer < ActionMailer::Base
 
   def new_message(message)
     @message = message
-    @url  = "http://localhost:3000/login" #Change this when you have a name
+    @url  = "http://localhost:3000/" #Change this when you have a name
     email_with_name = "#{@message.receiver} <#{@message.to_email}>"
     mail(:to => email_with_name, :subject => "You have a new Message on Shelfwire!") do |format|
       format.html
@@ -64,7 +65,7 @@ class UserMailer < ActionMailer::Base
 
   def contact_email(contact)
     @contact = contact
-    @url = "http:localhost:3000/"
+    @url = "http:localhost:3000/contact"
     email = "roseleaf.red@gmail.com"
     mail(:to => email, :subject => "Someone on Shelfwire has something to say") do |format|
       format.html

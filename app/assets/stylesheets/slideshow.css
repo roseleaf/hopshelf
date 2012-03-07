@@ -1,0 +1,29 @@
+#slideshow #slideshowWindow{
+
+  width: 600px;
+  height: 400px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  float:left;
+  clear:both;
+
+}
+
+.slide{
+
+  margin: 0;
+  padding: 0;
+  width: 600px;
+  height: 400px;
+  float: left;
+  position: relative;
+
+}
+
+
+
+
+
+

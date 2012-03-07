@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120205091730) do
+ActiveRecord::Schema.define(:version => 20120219174411) do
 
   create_table "books", :force => true do |t|
     t.integer  "poster_id"
@@ -71,6 +71,30 @@ ActiveRecord::Schema.define(:version => 20120205091730) do
     t.integer  "res_id"
   end
 
+  create_table "reponse_forms", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "request_forms", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "requests_pages", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "response_pages", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "searches", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "user_sessions", :force => true do |t|
     t.datetime "created_at"
@@ -92,6 +116,7 @@ ActiveRecord::Schema.define(:version => 20120205091730) do
     t.text     "region_id"
     t.boolean  "active",            :default => false
     t.string   "perishable_token"
+    t.string   "activation_code"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"

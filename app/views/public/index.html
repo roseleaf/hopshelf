@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+
+    <script>
+      $(function() {
+        $('.slide').crossSlide({
+          sleep: 2,
+          fade: 1
+        }, [
+          { src: '/assets/1.jpg' },
+          { src: '/assets/6.jpg' },
+          { src: '/assets/12.jpg' },
+          { src: '/assets/9.jpg' },
+          { src: '/assets/14.jpg' },
+          { src: '/assets/8.jpg' },
+          { src: '/assets/10.jpg' },         
+          { src: '/assets/5.jpg' },
+          { src: '/assets/7.jpg' },
+          { src: '/assets/4.jpg' }
+        ])
+      });
+    </script>
+
+
+    <title>The index</title>
+  </head>
+  <body>
+
+
+    <div id="page">
+      <div id="leftside">
+        <h2>Places</h2>
+        <ul class="links">
+          <li>
+            <a href="/regions/1">Santa Cruz</a>
+          </li>
+          <li>
+            <a href="/regions/2">Bay Area</a>
+          </li>
+          <li>
+            <a href="/regions/3">Antelope V</a>
+          </li>
+        </ul>
+      </div>
+
+      <div id="slideshow">
+        <div id="slideshowWindow">
+
+
+          <div class="slide"> 
+            <%=image_tag('1.jpg') %>
+
+          </div>
+         
+        </div>
+      </div>
+    </div>
+
+
+    <div id="rightside">
+      <h2>Ideas</h2>
+      <ul class="links">
+        <li>
+          <a href="/genres">Subjects</a>
+        </li>
+        <li><a href="#">About</a></li>
+        <li><a href="/contacts/new">Contact</a></li>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -4,9 +4,8 @@
   .blip
     - @regions.each do |region|
       %tr
-        %td= region.name
         / %td= link_to 'Show', '/regions/:id/user'
-        %td= link_to 'Show', region
+        %td= link_to region.name, region
         %br/
         %br/
 
