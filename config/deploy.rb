@@ -34,7 +34,6 @@ namespace :deploy do
  
  task :restart, :roles => :app, :except => { :no_release => true } do
    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-   run "cd #{current_path}; rake assets:precompile --trace"
    migrate
  end
 end
