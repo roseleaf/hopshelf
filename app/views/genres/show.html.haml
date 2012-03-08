@@ -1,13 +1,15 @@
 .flip
-  .box
-    %h2.santa Books in #{@genre.name}:
-  
-  .blip
-    - @books.each do |book|
-      %tr
-        %td= link_to book.title.capitalize, book
-        %br/
-        %br/
+  .midpage
+    %img(src=@genre.path)
+    .box
+      %h2.santa Books in #{@genre.name}:
+    
+    .blip
+      - @books.each do |book|
+        %tr
+          %td= link_to book.title.capitalize, book
+          %br/
+          %br/
 
   
     =link_to "Back", "/genres/"
