@@ -62,11 +62,7 @@ GEM
       thor (~> 0.14)
     json (1.6.5)
     libv8 (3.3.10.4)
-<<<<<<< HEAD
-    mail (2.4.1)
-=======
     mail (2.4.3)
->>>>>>> 6c2e5293b37d41f63b14e3e601364ff7cbc9a1c3
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
