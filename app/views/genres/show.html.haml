@@ -1,6 +1,6 @@
 .flip
   .midpage
-    %img(src=@genre.path)
+    %img(src="#{@genre.path}" class="genpic")
     .box
       %h2.santa Books in #{@genre.name}:
     
@@ -12,4 +12,4 @@
           %br/
 
   
-    =link_to "Back", "/genres/"
+    =link_to "Back to Subjects", "/genres/"

@@ -56,7 +56,13 @@ a:hover {
 
 
 
-
+.loggedon{
+  width: 250px;
+  height: 60px;
+  margin: 0 auto;
+  margin-left: 265px;
+  text-align: center;
+}
 
 
 
@@ -76,10 +82,10 @@ a:hover {
   height: 120px;
   width: 95px;
   text-align:left;
-  margin-top:90px;
+  margin-top:18px;
 }
 
-#leftside a, #rightside a{
+#leftside a, #rightside a, .loggedon a{
   line-height: 1.5;
   font-size: 22px;
   font-weight: 100;

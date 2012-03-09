@@ -17,25 +17,33 @@
     ])
   });
 #page
+
   #leftside
     %h2 Places
     %ul.links
       %li
         %a{:href => "/regions/1"} Santa Cruz
       %li
-        %a{:href => "/regions/2"} Bay Area
-      %li
         %a{:href => "/regions/3"} Antelope V
+      %li
+        %a{:href => "/regions/2"} Bay Area
+
   #slideshow
     #slideshowWindow
       .slide
-        = image_tag('1.jpg')
+        = image_tag('/assets/1.jpg')
+  .loggedon
+    - if current_user
+      %a{:href => "/regions/#{current_user.region_id}"} Others Near You
+    %br
+    - if current_user
+      %a= link_to "Your Shelf", user_path(current_user.id)
 #rightside
   %h2 Ideas
   %ul.links
     %li
-      %a{:href => "/genres"} Subjects
+      %a{:href => "/about"} About
     %li
-      %a{:href => "#"} About
+      %a{:href => "/genres"} Subjects
     %li
       %a{:href => "/contacts/new"} Contact

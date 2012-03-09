@@ -1,8 +1,9 @@
-%li.comment
+%p.comment
   %h3= @comment.title
   .body
     = @comment.body
-  %p= link_to 'Add a Reply', new_comment_comment_path(@comment)
+  - if @comment.id
+    %p= link_to 'Add a Reply', new_comment_comment_path(@comment)
   - unless @comment.comments.empty?
     %ul.comment_list
       = render :partial => 'comments/comment', :collection => @comment.comments

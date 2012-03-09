@@ -1,13 +1,16 @@
 .flip
-  .box
-    %h2.santa Bookshelves in #{@region.name}:
-  
-  .blip
-    - @users.each do |user|
-      %tr
-        / %td= user.username.capitalize
-        %td= link_to "#{user.username.capitalize}", user
-        %br/
-        %br/
-
-    =link_to "Back", "/regions/"
+  .midpage
+    %img(src="#{@region.path}" class="regpic")
+    .box
+      %h2.santa Bookshelves in #{@region.name}:
+    
+    .blip
+      - @users.each do |user|
+        %tr
+          / %td= user.username.capitalize
+          %td= link_to "#{user.username.capitalize}", user
+          %br/
+          %br/
+      %br/
+      %br/
+      =link_to "Back to Regions", "/regions/"

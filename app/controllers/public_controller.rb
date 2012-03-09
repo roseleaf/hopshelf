@@ -1,8 +1,12 @@
 class PublicController < ApplicationController
-    def index
+  def index
 
-    end
-    def about
-    end
+  end
+  def about
+  end
+
+  def page
+    @page = params[:page]
+  end
 
 end
