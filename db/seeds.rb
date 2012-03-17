@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Emanuel', :city => cities.first)
+
+Region.delete_all
+regions = Region.create!([{:name => 'Santa Cruz', :path => '/assets/sc.png'}, 
+                         {:name => 'East Bay', :path => '/assets/bay.png'}, 
+                         {:name => 'Antelope Valley', :path => '/assets/av.png'}])

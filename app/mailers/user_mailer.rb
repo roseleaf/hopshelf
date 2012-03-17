@@ -47,7 +47,7 @@ class UserMailer < ActionMailer::Base
   def new_message(message)
     @message = message
     @url  = "http://localhost:3000/" #Change this when you have a name
-    email_with_name = "#{@message.receiver} <#{@message.to_email}>"
+    email_with_name = "#{@message.receiver.username} <#{@message.receiver.email}>"
     mail(:to => email_with_name, :subject => "You have a new Message on Shelfwire!") do |format|
       format.html
     end
@@ -56,7 +56,7 @@ class UserMailer < ActionMailer::Base
   def new_comment(comment)
     @comment = comment
     @url  = "http://localhost:3000/login" #Change this when you have a name
-    email_with_name = "#{@message.receiver} <#{@message.to_email}>"
+    email_with_name = "#{@message.receiver.username} <#{@message.receiver.email}>"
     mail(:to => email_with_name, :subject => "You have a new comment on Shelfwire") do |format|
       format.html
       format.text
