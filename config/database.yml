@@ -2,8 +2,8 @@
 development:
   adapter: mysql2
   database: hopshelf
-  username: root
-  password: tree
+  username: rose
+  password: treetree
   pool: 5
   timeout: 5000
 

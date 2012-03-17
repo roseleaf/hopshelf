@@ -21,12 +21,9 @@
   #leftside
     %h2 Places
     %ul.links
-      %li
-        %a{:href => "/regions/1"} Santa Cruz
-      %li
-        %a{:href => "/regions/3"} Antelope V
-      %li
-        %a{:href => "/regions/2"} Bay Area
+      - @regions.each do |region|
+        %li
+          %a{:href => region_path(region)}= truncate(region.name, :length => 10, :omission => '')
 
   #slideshow
     #slideshowWindow
@@ -37,7 +34,7 @@
       %a{:href => "/regions/#{current_user.region_id}"} Others Near You
     %br
     - if current_user
-      %a= link_to "Your Shelf", user_path(current_user.id)
+      %a= link_to "Your Shelf", book_user_path(current_user.id)
 #rightside
   %h2 Ideas
   %ul.links

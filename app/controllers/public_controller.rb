@@ -1,6 +1,6 @@
 class PublicController < ApplicationController
   def index
-
+    @regions = Region.all
   end
   def about
   end

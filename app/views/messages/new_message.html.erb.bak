@@ -1,0 +1,19 @@
+<html>
+  <body>
+    <h1> Oh hello, <%= @message.receiver.username %>! </h1>
+     <h2> <%= @message.sender.username %> sent you a message about your book on Shelfwire. </h2>
+
+       <h3>Subject: <%= @message.subject %></h3>
+
+       <p>"<%= @message.text %> "</p>
+       <br>
+
+     <p>To see the full message, the meetup plan, and to respond: 
+    <%= link_to 'Respond', message_path(@message) %>
+    Hope you're loving life off the shelf. :)</p>
+    <br>
+    <p>-Your friends at 
+    www.shelfwire.org</p>
+
+  </body>
+</html?

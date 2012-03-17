@@ -34,9 +34,7 @@ class MessagesController < ApplicationController
   # GET /messages/new.json
   def new
     @message = Message.new
-    @books = Book.find(params[:id])
-    @book = Book.find_by_id(:book_id)
-
+    @book = Book.find(params[:id])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -52,10 +50,9 @@ class MessagesController < ApplicationController
   # POST /messages
   # POST /messages.json
   def create
-    @message = Message.new
-    @books = Book.find_by_id(params[:id])
-    @book = Book.find_by_id(:book_id)
-    # @user = User.find_by_id(:poster_id)
+
+    logger.info params[:message].to_yaml
+    @message = Message.new(params[:message])
 
     # respond_to do |format|
     if @message.save

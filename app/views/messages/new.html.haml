@@ -1,5 +1,7 @@
 %h1 Request to Borrow
 %h2 The owner of this book will receive your request by email.
+= "Request to borrow the book '#{@book.title}' by '#{@book.author}'"
+%br/
 %br/
 = render 'messageform'
 %br/
