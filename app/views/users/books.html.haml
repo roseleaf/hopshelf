@@ -11,9 +11,10 @@
       %br/
       - @books.each do |book|
         %b
-          .blip
+          .blip.flip
             %br/
-            %h2= book.title
+            %h2
+              =link_to book.title.capitalize, "/books/#{book.id}"
             by
             = book.author
 
@@ -36,13 +37,19 @@
       %br/
 
 
+      .flip
+        -if is_me? @user.id
+          .entry
+            %h2 Put a New Book on Your Shelf
+            =render 'books/bookform'
 
-      -if is_me? @user.id
-        .entry
-          %h2 Put a New Book on Your Shelf
-          =render 'books/bookform'
 
-
-    %br
-    %a{:href => "/regions/#{@user.region_id}"} Back to Neighbor List
-    .shelf
+        %br
+        %br
+        .nlnk
+          =link_to "Profile", "/users/#{@user.id}"
+        %br
+        %br
+        .nlnk
+          %a{:href => "/regions/#{@user.region_id}"} Neighbors
+        .shelf

@@ -18,21 +18,24 @@ h1 {
   color: #8f8d72;
 }
 header h2{
+  font-family: georgia;
   margin-top: 130px;
 
 }
 
-
-
-
-.linx a{
-  color: #ccc;
+h2{
+  font-family: georgia;
+  font-weight: 100;
+  line-height: 1;
 }
 
 
+
 a  {
-  color: #333;
-  text-decoration:none;
+  font-family: lucida grande;
+  font-weight: 100;
+  color: #616b54;
+  text-decoration: none;
 }
 
 
@@ -56,12 +59,24 @@ a:hover {
 
 
 
-.loggedon{
-  width: 250px;
+.loggedon {
   height: 60px;
-  margin: 0 auto;
+  width: 200px;
+  margin-top: 8px;
   margin-left: 265px;
   text-align: center;
+}
+.lbtn{
+  clear:both;
+  width: 175px;
+  margin-left: 70px;
+  text-align: center;
+  height: 23px;
+  background-image: url(hlink.png);
+  -moz-box-shadow:    1px 1px 5px 1px #ccc;
+  -webkit-box-shadow: 1px 1px 5px 1px #ccc;
+  box-shadow:         1px 1px 5px 1px #ccc;
+  display: block;
 }
 
 
@@ -72,8 +87,8 @@ a:hover {
   width: 95px;
   height: 120px;
   text-align: right;
-  margin-top: 118px;
-  margin-right: 36px;
+  margin-top: 108px;
+  margin-right: 39px;
   margin-left: -16px;
 }
 
@@ -82,26 +97,49 @@ a:hover {
   height: 120px;
   width: 95px;
   text-align:left;
-  margin-top:18px;
+  margin-top:78px;
+  margin-left: -15px;
 }
 
 #leftside a, #rightside a, .loggedon a{
-  line-height: 1.5;
+  margin-top: -2px;
+  color: gray;
   font-size: 22px;
   font-weight: 100;
   font-family: sans-serif;
 }
+.btn{
+  width: 112px;
+  text-align: center;
+  height: 23px;
+  margin: 8px;
+  background-image: url(hlink.png);
+  -moz-box-shadow:    1px 1px 5px 1px #ccc;
+  -webkit-box-shadow: 1px 1px 5px 1px #ccc;
+  box-shadow:         1px 1px 5px 1px #ccc;
+  display: block;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 7px;
+  margin-bottom: 11px;
+}
+
+.btn:hover, .lbtn:hover{
+  background-image: url(hhlink.png);
+}
+
 
 #leftside h2, #rightside h2{
+  text-align: center;
   font-size: 26px;
   font-weight: 400;
   letter-spacing: 2px;
 }
 
 #leftside h2{
-margin-left: 32px;}
+margin-left: 29px;}
 #rightside h2{
-  margin-left: 7px;
+  margin-left: 34px;
 }
 
 .links{
@@ -111,11 +149,7 @@ margin-left: 32px;}
   margin-left: -30px;
 }
 
-h2{
-  font-family: sans-serif;
-  font-weight: 100;
-  line-height: 1;
-}
+
 
 #slideshow{
   float:left;

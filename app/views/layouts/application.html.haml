@@ -15,19 +15,29 @@
             .content
                 .sidediv.clearfix
                 .nav
-                    .greet
-                        -if current_user
-                            Welcome,
-                            =current_user.username.capitalize
+
                     .linx
                         - if current_user
-                            %a= link_to "/ Edit Profile /", edit_user_path(current_user.id)
-                            %a= link_to "/ Logout /", :logout
-                        -else
-                            %a= link_to "/ Register /", new_user_path
-                            %a= link_to "/ Login /", :login   
-                        %a= link_to "/ Contact /", :contacts_new
+                            .nlnk
+                                %a{:href => "/regions/#{current_user.region_id}"} Others Nearby
+                            .nlnk
+                                = link_to "Your Shelf", book_user_path(current_user.id)                        
+                            .nlnk
+                                = link_to " Edit Profile ", edit_user_path(current_user.id)
+                            .nlnk
+                                = link_to " Logout ", :logout
 
+                        -else
+                            .nlnk
+                                = link_to " Register ", new_user_path
+                            .nlnk
+                                = link_to " Login ", :login   
+                        .nlnk
+                            = link_to " Contact ", :contacts_new
+                    / .greet
+                    /     -if current_user
+                    /         Welcome,
+                    /         =current_user.username.capitalize
 
         #maincontent.fill 
             #page-wrap

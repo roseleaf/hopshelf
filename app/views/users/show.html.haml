@@ -16,14 +16,14 @@
     %h3 location:
     = @user.location
 
-%p
-- if is_me? @user.id
-  = link_to 'Edit', edit_user_path(@user)
-%p
+  %p
+  - if is_me? @user.id
+    .nlnk
+      = link_to 'Edit', edit_user_path(@user)
+  %p
+  %br
 
-/ .shelflink
-/   .go
-/     .link=link_to "See #{@user.username.capitalize}'s Bookshelf", :book_user
-%br
-  %a{:href => "/regions/#{@user.region_id}"} Back to Neighbor List
+  %br
+    .nlnk
+      %a{:href => "/regions/#{@user.region_id}"} Neighbors
   

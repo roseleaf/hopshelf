@@ -1,7 +1,8 @@
 body {
   background-color: #fff;
   color: #474639;
-  font-family: Georgia sans-serif;
+  font-family: lucida grande;
+  font-weight: 100;
   font-size: 13px;
   line-height: 18px; }
 
@@ -24,15 +25,22 @@ div {
 .field_with_errors {
   padding: 2px;
   background-color: grey;
-  display: table; }
+  display: table; 
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;  
+  }
 
 #error_explanation {
   width: 450px;
-  border: 2px solid red;
+  border: 2px solid gray;
   padding: 7px;
   padding-bottom: 0;
   margin-bottom: 20px;
   background-color: #f0f0f0;
+  border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;  
   h2 {
     text-align: left;
     font-weight: bold;
@@ -40,7 +48,7 @@ div {
     font-size: 12px;
     margin: -7px;
     margin-bottom: 0px;
-    background-color: #c00;
+    background-color: gray;
     color: #fff; }
   ul li {
     list-style-type: none !important;

@@ -4,16 +4,16 @@
       sleep: 2,
       fade: 1
     }, [
-      { src: '/assets/1.jpg' },
-      { src: '/assets/6.jpg' },
-      { src: '/assets/12.jpg' },
-      { src: '/assets/9.jpg' },
-      { src: '/assets/14.jpg' },
-      { src: '/assets/8.jpg' },
-      { src: '/assets/10.jpg' },         
-      { src: '/assets/5.jpg' },
-      { src: '/assets/7.jpg' },
-      { src: '/assets/4.jpg' }
+      { src: '/assets/1.png' },
+      { src: '/assets/6.png' },
+      { src: '/assets/12.png' },
+      { src: '/assets/9.png' },
+      { src: '/assets/14.png' },
+      { src: '/assets/8.png' },
+      { src: '/assets/10.png' },         
+      { src: '/assets/5.png' },
+      { src: '/assets/7.png' },
+      { src: '/assets/4.png' }
     ])
   });
 #page
@@ -23,24 +23,24 @@
     %ul.links
       - @regions.each do |region|
         %li
-          %a{:href => region_path(region)}= truncate(region.name, :length => 10, :omission => '')
+          .btn
+            %a{:href => region_path(region)}= truncate(region.name, :length => 10, :omission => '')
 
   #slideshow
     #slideshowWindow
       .slide
-        = image_tag('/assets/1.jpg')
-  .loggedon
-    - if current_user
-      %a{:href => "/regions/#{current_user.region_id}"} Others Near You
-    %br
-    - if current_user
-      %a= link_to "Your Shelf", book_user_path(current_user.id)
+        = image_tag('/assets/1.png')
+
 #rightside
   %h2 Ideas
   %ul.links
     %li
-      %a{:href => "/about"} About
+      .btn
+        %a{:href => "/about"} About
     %li
-      %a{:href => "/genres"} Subjects
+      .btn
+        %a{:href => "/genres"} Subjects
     %li
-      %a{:href => "/contacts/new"} Contact
+      .btn
+        %a{:href => "/contacts/new"} Contact
+
