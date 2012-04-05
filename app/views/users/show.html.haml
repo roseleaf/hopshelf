@@ -72,33 +72,3 @@
 
 
 
-
-/ .info.flip
-/   - if is_me? @user.id
-/     %h1 Looking Glass
-/   -else 
-/     %h1= @user.username.capitalize
-/   .shelflink
-/     .go
-/       .link=link_to "See #{@user.username.capitalize}'s Bookshelf", :book_user
-
-/ .profile.flip
-/   %p
-/     %h3.info A little about #{@user.username.capitalize}
-/     = @user.personal
-
-/   %p
-/     %h3 location:
-/     = @user.location
-
-/   %p
-/   - if is_me? @user.id
-/     .nlnk
-/       = link_to 'Edit', edit_user_path(@user)
-/   %p
-/   %br
-
-/   %br
-/     .nlnk
-/       %a{:href => "/regions/#{@user.region_id}"} Neighbors
-  
