@@ -9,11 +9,11 @@ body {
   background-color: #f0f0f0;
   font-family: Georgia;
   font-size: 13px;
-  color: #545344;
+  color: #333;
 }
 
 h1 {
-  font-size: 58px;
+  font-size: 36px;
   font-weight: 100;
   color: #8f8d72;
 }
@@ -102,6 +102,9 @@ a:hover {
 }
 
 #leftside a, #rightside a, .loggedon a{
+  display: inline-block;
+  width: 110px;
+  height: 23px;
   margin-top: -2px;
   color: gray;
   font-size: 22px;

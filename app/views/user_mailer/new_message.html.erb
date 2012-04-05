@@ -1,0 +1,19 @@
+<html>
+  <body>
+    <h1> Oh hello, <%= @toname %>! </h1>
+     <h2> <%= @sendername %> sent you a message about your book on Shelfwire. </h2>
+
+       <h3>Subject: <%= @message.subject %></h3>
+
+       <p>"<%= truncate(@message.text, :length => 25, :omission => '... (continued)') %> "</p>
+       <br>
+
+     <p>To see the full message, the meetup plan, and to respond: 
+    <%= link_to "localhost:3000/users/#{@message.sender_id}/message"%>
+    Hope you're loving life off the shelf. :)</p>
+    <br>
+    <p>-Your friends at 
+    www.shelfwire.org</p>
+
+  </body>
+</html>

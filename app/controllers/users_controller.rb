@@ -33,7 +33,7 @@ class UsersController < ApplicationController
   end
 
   def books
-    @user = User.find(params[:id])
+    @user = User.find(params[:user_id])
     @genre = Genre.all
 
     # @books = Book.find(params[:id])

@@ -8,11 +8,11 @@
 //= require jquery_ujs
 //= require_tree .
 $(function(){  // $(document).ready shorthand
-  $('.box').hide().fadeIn('normal');
+  $('.box').hide().fadeIn('slow');
 });
 
 $(function() {
-  $('.genrebox, .shelflink').hide().fadeIn('slow', function() {
+  $('.genrebox, .shelflink, .genpic').hide().fadeIn('slow', function() {
     // Animation complete.
   });
 });

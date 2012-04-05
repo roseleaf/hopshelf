@@ -37,12 +37,13 @@
 .shelfname{
   height: 100%;
   line-height: 100%;
-  margin-left: 30px;
 }
 
 .shelflink{
   width: 300px;
   height: 55px;
+  margin-top: 45px;
+  margin-bottom: -35px;
   background-image: url('shelfsmall.png');
   text-align: center;
 }
@@ -65,6 +66,11 @@ h1{
   float: left;
   margin-left: 20px;
   text-align: center;
+}
+.request a{
+  display: inline-block;
+  height: 112px;
+  width: 130px;
 }
 .bookname{
   max-width: 600px;

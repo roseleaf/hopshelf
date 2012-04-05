@@ -1,29 +1,104 @@
-.info.flip
-  - if is_me? @user.id
-    %h1 Looking Glass
-  -else 
-    %h1= @user.username.capitalize
-  .shelflink
-    .go
-      .link=link_to "See #{@user.username.capitalize}'s Bookshelf", :book_user
+- if !current_user
+  %h2 Hi! Please log in to see the goods. :)
+  .link=link_to 'Home', :root
 
-.profile.flip
-  %p
-    %h3.info A little about #{@user.username.capitalize}
-    = @user.personal
+-else
+  .container
+    .box.flip
+      .info.flip
+        - if is_me? @user.id
+          %h1 Looking Glass
+        -else 
+          %h1.shelfname The Bookshelf of #{@user.username.capitalize}
+    %p#notice= notice
+    .profile.flip
+      %p
+        %h3.info A little about #{@user.username.capitalize}
+        = @user.personal
 
-  %p
-    %h3 location:
-    = @user.location
+      %p
+        %h3.info location:
+        %p.info #{@user.location}
 
-  %p
-  - if is_me? @user.id
-    .nlnk
-      = link_to 'Edit', edit_user_path(@user)
-  %p
-  %br
+      %br
+      .nlnk=link_to "Conversation", :message_user
+      %br
 
-  %br
-    .nlnk
-      %a{:href => "/regions/#{@user.region_id}"} Neighbors
+
+      .shelflink
+        .go Books  
+    #bookshelf.clearfix
+      %br/
+      - @books.each do |book|
+        %b
+          .blip.flip
+            %br/
+            %h2
+              =link_to book.title.capitalize, "/books/#{book.id}"
+            by
+            = book.author
+
+            - if is_owner? book.poster_id 
+              %br
+              = link_to 'Edit this book', edit_book_path(book) 
+            /   = link_to 'Edit', edit_book_path(@book)
+            .thought #{@user.username.capitalize}'s thoughts on this
+            .toggle
+              =book.description
+              %br/
+              =link_to "Comment or Request to Borrow", "/books/#{book.id}"
+
+            / -if @books.blank?
+      -if @books.empty?
+        %h2 #{@user.username.capitalize} hasn't filled this shelf yet...
+
+      %br/
+      %br/
+      %br/
+
+
+      .flip
+        -if is_me? @user.id
+          .entry
+            %h2 Put a New Book on Your Shelf
+            =render "books/bookform"
+
+        %br
+
+        %br
+        .nlnk
+          %a{:href => "/regions/#{@user.region_id}"} Neighbors
+        .shelf
+
+
+
+
+/ .info.flip
+/   - if is_me? @user.id
+/     %h1 Looking Glass
+/   -else 
+/     %h1= @user.username.capitalize
+/   .shelflink
+/     .go
+/       .link=link_to "See #{@user.username.capitalize}'s Bookshelf", :book_user
+
+/ .profile.flip
+/   %p
+/     %h3.info A little about #{@user.username.capitalize}
+/     = @user.personal
+
+/   %p
+/     %h3 location:
+/     = @user.location
+
+/   %p
+/   - if is_me? @user.id
+/     .nlnk
+/       = link_to 'Edit', edit_user_path(@user)
+/   %p
+/   %br
+
+/   %br
+/     .nlnk
+/       %a{:href => "/regions/#{@user.region_id}"} Neighbors
   

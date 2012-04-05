@@ -10,6 +10,7 @@
         = csrf_meta_tags
     %body
         .header.fill
+            .pice
             .logo
                 =link_to image_tag('shelflogos.png'), :root
             .content
@@ -21,7 +22,7 @@
                             .nlnk
                                 %a{:href => "/regions/#{current_user.region_id}"} Others Nearby
                             .nlnk
-                                = link_to "Your Shelf", book_user_path(current_user.id)                        
+                                = link_to "Your Shelf", user_path(current_user.id)                        
                             .nlnk
                                 = link_to " Edit Profile ", edit_user_path(current_user.id)
                             .nlnk
@@ -44,5 +45,8 @@
                 .content
                     %p#notice= notice
                     = yield
+    .feet
+        %p.tagline <span>Give your books a life.</span> <span class="footlg"></span>
+                        
     .footer
     .botright.linkopacity= link_to 'Home', :root

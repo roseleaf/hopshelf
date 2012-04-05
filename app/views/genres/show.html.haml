@@ -10,6 +10,9 @@
           %td= link_to book.title.capitalize, book
           %br/
           %br/
+      -if @books.empty?
+        
+        %p Nothing in this subject yet...
 
     %br
     .nlnk

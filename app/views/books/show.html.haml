@@ -11,12 +11,14 @@
     = @book.genre.name
     %br/
     %br/
-    %a{:href => "/users/#{@book.poster_id}/books"} See this item on the bookshelf
+    %a{:href => "/users/#{@book.poster_id}/"} See this item on the bookshelf
 
   .request.box.clearfix
     %a{:href => "/books/#{@book.id}/message"}
       %h2 Request to Borrow This Book!
-
+  .deso
+    %h3 Owner's Description:
+    = @book.description
   .commentz  
     %h2 Comments
     %p= link_to 'Add a Comment', new_book_comment_path(@book)

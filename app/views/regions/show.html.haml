@@ -11,6 +11,8 @@
           %td= link_to "#{user.username.capitalize}", user
           %br/
           %br/
+      -if @users.empty?
+        %p This area is brand new. Register now to be the pioneer.
       %br/
       %br/
       .nlnk

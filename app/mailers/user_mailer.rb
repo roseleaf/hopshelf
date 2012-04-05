@@ -46,7 +46,12 @@ class UserMailer < ActionMailer::Base
 
   def new_message(message)
     @message = message
-    @url  = "http://localhost:3000/" #Change this when you have a name
+    @url  = "http://localhost:3000/messages" #Change this when you have a name
+    @sendername = @message.sender.username.capitalize
+    @toname = @message.receiver.username.capitalize
+    if message.book.present?
+      @bookname = message.book.title
+    end
     email_with_name = "#{@message.receiver.username} <#{@message.receiver.email}>"
     mail(:to => email_with_name, :subject => "You have a new Message on Shelfwire!") do |format|
       format.html

@@ -1,0 +1,20 @@
+!!!
+
+%h1 Oh hello, #{@toname}! 
+%br
+-if @book.id
+  %h2 #{@sendername} sent you a message about your book "#{@bookname}" on Shelfwire. 
+-else
+  %h2 #{@sendername} sent you a message on Shelfwire
+
+%br
+%h3 Subject: #{@message.subject}
+%br
+%p " #{@message.text}"
+%br
+%p To see the full message, the meetup plan, and to respond: 
+= link_to @url 
+%br Hope you're loving life off the shelf. :)
+%br
+%p -Your friends at 
+%p www.shelfwire.org

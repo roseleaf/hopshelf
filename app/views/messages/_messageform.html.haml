@@ -18,14 +18,16 @@
     %br/
     = f.text_area :text
     = f.hidden_field :sender_id, :value => current_user.id
-    = f.hidden_field :book_id, :value => @book.id
-    = f.hidden_field :receiver_id, :value => @book.poster_id
-
+    -if @book.present?
+      = f.hidden_field :book_id, :value => @book.id
+      = f.hidden_field :receiver_id, :value => @book.poster_id
+    -else
+      =f.hidden_field :receiver_id, :value => @user.id
   .field
     = f.label "Suggest when and where might be good for pick-up"
     %br/
     = f.text_area :plan
 
   .actions
-    = f.submit
+    = f.submit "Send Message"
 

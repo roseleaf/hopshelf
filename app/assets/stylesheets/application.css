@@ -9,11 +9,23 @@ html, body {
   height: 100%; 
   background-image: url(fabric_plaid.png);
 }
-
+input[type="submit"]
+{
+  background:url(nlink.png);
+}
+input[type="submit"]:hover{
+  background-image: url(nhlink.png);
+}
 .commentz{
   float: left;
   width: 600px !important;
   clear:both;
+  margin-top: 40px;
+}
+
+.deso{
+  width: 620px;
+  margin-left: 16px;
 }
 
 .singlecomment{
@@ -66,15 +78,36 @@ a:hover{
   float: left;
   margin-right: 2px;
 }
+.nlnk a{
+  display: inline-block;
+  height: 25px;
+  width: 100px;
+  color: #333;
+}
 .nlnk:hover{
   background-image: url(nhlink.png);
   background-repeat: no-repeat;
 }
-.linx a{
-  margin-top: 3px;
+.dlnk{
+  width: 200px;
+  height: 31px;
+  text-align: center;
+  background-image: url(dlnk.png);
+  background-repeat: no-repeat;
+  float:left;
+  margin-bottom: 2px;
+}
+.dlnk:hover{
+  background-image: url(dhlink.png);
+  background-repeat: no-repeat;  
+}
+.dlnk a{
+  margin-top: 4px;
+  display: inline-block;
+  width: 200px;
+  height: 31px;
   color: #333;
 }
-
 
 
 .greet{
@@ -84,6 +117,15 @@ a:hover{
   color: #DAD8B0;
 }
 
+.pice{
+  height: 34px;
+  width: 36px;
+  background-image: url(logs.png);
+  clear:both;
+  float: right;
+  margin-right: 12px;
+  margin-top: 2px;
+}
 .logo{
   width: 267px;
   margin-top: 5px;
@@ -93,7 +135,8 @@ a:hover{
 }
 
 .logo a{
-  height: 46px;
+  display: inline-block;
+  height: 54px;
   width: 245px;
 }
 
@@ -110,12 +153,13 @@ a:hover{
 
 #page-wrap{
   overflow: hidden;
-  padding-bottom: 100px;
+  padding-bottom: 204px;
   margin-bottom: 0px;
   margin-top: 16px;
   margin-left: 20px;
   position: relative;
 }
+
 
 .sidediv{
   width: 540px;
@@ -172,13 +216,18 @@ h1 {
 }
 
 .content {
-  max-width: 1250px;
+  max-width: 1260px;
   margin: 0 auto;
   padding-top: 10px;
   height: 100%;
 }
 
-
+.centerbtn{
+  text-align: center;
+  margin: 0 auto;
+  width: 101px;
+  height: auto;
+}
 
 .box{
   background-image: url(groovepaper.png);
@@ -187,18 +236,18 @@ h1 {
   margin-left: 5px;
   margin-top: 5px;
   margin-bottom: 18px;
-  -moz-box-shadow:    2px 2px 5px 1px #ccc;
-  -webkit-box-shadow: 2px 2px 5px 1px #ccc;
-  box-shadow:         2px 2px 5px 1px #ccc;
-  border-radius: 15px;
-  -moz-border-radius: 15px;
-  border-radius: 15px;
+  -moz-box-shadow:    0px 2px 5px 1px #ccc;
+  -webkit-box-shadow: 0px 2px 5px 1px #ccc;
+  box-shadow:         0px 2px 5px 1px #ccc;
+  border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
 }
 
 .box:hover{
-  -moz-box-shadow:    2px 3px 4px 3px #c2c2c2;
-  -webkit-box-shadow: 2px 3px 4px 3px #c2c2c2;
-  box-shadow:         2px 3px 4px 3px #c2c2c2; 
+  -moz-box-shadow:    0px 3px 4px 3px #c2c2c2;
+  -webkit-box-shadow: 0px 3px 4px 3px #c2c2c2;
+  box-shadow:         0px 3px 4px 3px #c2c2c2; 
 }
 
 .genpic{
@@ -228,6 +277,36 @@ h1 {
 
 .botright a{
   color: #ccc;
+}
+
+.feet{
+   height: 130px;
+   position: relative;
+   display: block;
+   margin-top: -230;
+   clear: both;
+   min-width: 900px;
+   max-width: 1260px;
+   width: 100%;
+   padding: 0px 10px 0px 10px; 
+   margin-left: -10px;
+   background: #a6a383;
+   border-top: 20px solid #bab9ae;
+}
+.tagline{
+  font: normal 45px Georgia, sans-serif;
+  margin-left: 20px;
+  color: #bab9ae;
+  margin-top: 10px;
+}
+.footlg{
+  height: 67px;
+  width: 70px;
+  float: left;
+  clear:both;
+  background-image: url(lgo.png);
+  margin-top: -6px;
+  margin-right: 8px;
 }
 
 .footer{

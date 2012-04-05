@@ -1,3 +1,14 @@
+/ - if !current_user
+/   %h2 Hi! Please log in to see the goods. :)
+/   .link=link_to 'Home', :root
+
+/ -else
+/   .container
+/     .box.flip
+/       %h1.shelfname The Bookshelf of #{@user.username.capitalize}
+/     %p#notice= notice
+
+
 - if !current_user
   %h2 Hi! Please log in to see the goods. :)
   .link=link_to 'Home', :root
@@ -5,8 +16,32 @@
 -else
   .container
     .box.flip
-      %h1.shelfname The Bookshelf of #{@user.username.capitalize}
+      .info.flip
+        - if is_me? @user.id
+          %h1 Looking Glass
+        -else 
+          %h1.shelfname The Bookshelf of #{@user.username.capitalize}
     %p#notice= notice
+    .profile.flip
+      %p
+        %h3.info A little about #{@user.username.capitalize}
+        = @user.personal
+
+      %p
+        %h3.info location:
+        %p.info #{@user.location}
+
+      %br
+      .centerbtn
+        .nlnk=link_to "Conversation", :message_user
+      %br    
+
+      .shelflink
+        .go Books  
+
+
+    %br/
+
     #bookshelf.clearfix
       %br/
       - @books.each do |book|
@@ -30,7 +65,8 @@
 
             / -if @books.blank?
       -if @books.empty?
-        %h2 #{@user.username.capitalize} hasn't filled this shelf yet...
+        .info
+          %h2 #{@user.username.capitalize} hasn't filled this shelf yet...
 
       %br/
       %br/
@@ -44,12 +80,13 @@
             =render 'books/bookform'
 
 
+        / %br
+        / %br
+        / .nlnk
+        /   =link_to "Profile", "/users/#{@user.id}"
         %br
         %br
-        .nlnk
-          =link_to "Profile", "/users/#{@user.id}"
-        %br
-        %br
-        .nlnk
-          %a{:href => "/regions/#{@user.region_id}"} Neighbors
+        .centerbtn
+          .nlnk
+            %a{:href => "/regions/#{@user.region_id}"} Neighbors
         .shelf
