@@ -10,41 +10,41 @@
         = csrf_meta_tags
         %link{:rel=>"shortcut icon", :href=>"/assets/favicon.ico"}
     %body
-        .header.fill
-            .pice
-            .logo
-                =link_to image_tag('shelflogos.png'), :root
-            .content
-                .sidediv.clearfix
-                .nav
-
-                    .linx
-                        - if current_user
-                            .nlnk
-                                %a{:href => "/regions/#{current_user.region_id}"} Others Nearby
-                            .nlnk
-                                = link_to "Your Shelf", user_path(current_user.id)                        
-                            .nlnk
-                                = link_to " Edit Profile ", edit_user_path(current_user.id)
-                            .nlnk
-                                = link_to " Logout ", :logout
-
-                        -else
-                            .nlnk
-                                = link_to " Register ", new_user_path
-                            .nlnk
-                                = link_to " Login ", :login   
-                        .nlnk
-                            = link_to " Contact ", :contacts_new
-
-
-        #maincontent.fill 
-            #page-wrap
+        .wrapper    
+            .header.fill
+                .pice
+                .logo
+                    =link_to image_tag('shelflogos.png'), :root
                 .content
-                    %p#notice= notice
-                    = yield
-    .feet
-        %p.tagline <span>Give your books a life.</span> <span class="footlg"></span>
+                    .sidediv.clearfix
+                    .nav
+
+                        .linx
+                            - if current_user
+                                .nlnk
+                                    %a{:href => "/regions/#{current_user.region_id}"} Others Nearby
+                                .nlnk
+                                    = link_to "Your Shelf", user_path(current_user.id)                        
+                                .nlnk
+                                    = link_to " Edit Profile ", edit_user_path(current_user.id)
+                                .nlnk
+                                    = link_to " Logout ", :logout
+
+                            -else
+                                .nlnk
+                                    = link_to " Register ", new_user_path
+                                .nlnk
+                                    = link_to " Login ", :login   
+                            .nlnk
+                                = link_to " Contact ", :contacts_new
+            #maincontent.fill 
+                #page-wrap
+                    .content
+                        %p#notice= notice
+                        = yield
+        .push
+        .feet
+            %p.tagline <span>Give your books a life.</span> <span class="footlg"></span>
                         
     .footer
-    .botright.linkopacity= link_to 'Home', :root
+    / .botright.linkopacity= link_to 'Home', :root

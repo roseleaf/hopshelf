@@ -21,7 +21,6 @@
           %h1 Looking Glass
         -else 
           %h1.shelfname The Bookshelf of #{@user.username.capitalize}
-    %p#notice= notice
     .profile.flip
       %p
         %h3.info A little about #{@user.username.capitalize}
@@ -48,6 +47,9 @@
         %b
           .blip.flip
             %br/
+            - if is_owner? book.poster_id
+              .x
+                =link_to image_tag('/assets/x.png'), book, :confirm => 'Are you sure you would like to delete this book from your page? Forever?', :method => :delete
             %h2
               =link_to book.title.capitalize, "/books/#{book.id}"
             by

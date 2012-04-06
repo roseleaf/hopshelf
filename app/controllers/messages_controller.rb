@@ -34,8 +34,10 @@ class MessagesController < ApplicationController
   # GET /messages/new.json
   def new
     @message = Message.new
-    @user = User.find(params[:user_id])
-    if params[:book_id].present?
+    if params[:user_id].present?
+      @user = User.find(params[:user_id])
+    
+    elsif params[:book_id].present?
       @book = Book.find(params[:book_id])
     end
 

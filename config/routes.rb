@@ -5,10 +5,11 @@ Hopshelf::Application.routes.draw do
   match 'logout' => 'user_sessions#destroy', :as => :logout
   match 'users/:user_id/books/' => 'users#books', :as => :user
   match 'regions/:id' => 'regions#users', :as => :user_regions
-  match 'books/:book_id/message/' => 'messages#new', :as => :message_book
+  match 'books/:book_id/message/' => 'messages#new', :as => :new_message_book
   match 'users/:user_id/message/' => 'messages#index', :as => :message_user
   match 'users/:user_id/message/new' => 'messages#new', :as => :new_message_user
   match 'books/:id/' => 'comment#new', :as => :comment_book
+  match 'deletecom' => 'books#destroy', :as => :deletebk
   match 'contact' => 'contacts#new', :as => :contacts_new
   match 'contacts' => 'contacts#new'
   match 'activate(/:activation_code)' => 'users#activate', :as => :activate_account

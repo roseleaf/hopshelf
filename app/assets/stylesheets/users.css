@@ -32,6 +32,8 @@
   width: 300px;
   height: 100%;
   margin: 0 auto;
+  margin-bottom: 18px;
+  margin-top: 12px;
 }
 
 .shelfname{
@@ -61,7 +63,7 @@ h1{
 }
 
 .request{
-  height: 112px;
+  height: 77px;
   width: 130px;
   float: left;
   margin-left: 20px;
@@ -72,10 +74,28 @@ h1{
   height: 112px;
   width: 130px;
 }
+.request h2{
+  line-height: 1 !important;
+}
+
 .bookname{
   max-width: 600px;
   min-width: 400px;
   height: auto;
 }
 
-
+.x{
+  height: 12px;
+  width: 12px;
+  float: left;
+  margin-right: 6px;
+  display: inline;
+  opacity: 0.5;
+  -moz-opacity: 0.5;
+  filter:alpha(opacity=5);
+  margin-top: 3px;
+}
+.x:hover{
+  opacity: 1.0;
+  -moz-opacity: 1.0;
+  filter:alpha(opacity=10);;

@@ -48,7 +48,7 @@ class BooksController < ApplicationController
     @book = Book.new(params[:book])
 
     if @book.save
-      redirect_to(book_user_path(@book.poster_id), :notice => 'Bookshelf Updated!')
+      redirect_to(user_path(@book.poster_id), :notice => 'Bookshelf Updated!')
     else
       @user = User.find(@book.poster_id)
       @books = Book.where("(poster_id = ?)", @user.id)
@@ -62,7 +62,7 @@ class BooksController < ApplicationController
    
     respond_to do |format|
       if @book.update_attributes(params[:book])
-        format.html  { redirect_to(book_user_path(@book.poster_id), #maintains user id for path
+        format.html  { redirect_to(user_path(@book.poster_id), #maintains user id for path
                       :notice => 'Bookshelf was successfully updated.') }
         # format.json  { head :no_content }
       else
@@ -76,11 +76,11 @@ class BooksController < ApplicationController
   def destroy
     @book = Book.find(params[:id])
     @book.destroy
-   
-    respond_to do |format|
-      format.html { redirect_to books_url }
-      format.json { head :no_content }
-    end
+    redirect_to(user_path(@book.poster_id), :notice => 'Bookshelf Updated!')
+    # respond_to do |format|
+    #   format.html { redirect_to books_url }
+    #   format.json { head :no_content }
+    # end
   end
 
   def search
