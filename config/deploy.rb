@@ -19,11 +19,12 @@ set :use_sudo, false
 
 namespace :deploy do
  task :cold do       # Overriding the default deploy:cold
-   update
-   load_schema       # My own step, replacing migrations.
-   start
+  update
+  run "cd #{current_path}; rake assets:precompile --trace"
+  load_schema       # My own step, replacing migrations.
+  start
  end
-
+ 
  task :load_schema, :roles => :app do
   env = ENV['env'] || 'staging' 
   run "cd #{current_path}; rake db:schema:load RAILS_ENV=#{env}"
