@@ -28,16 +28,17 @@
 
 }
 @font-face {
-    font-family: 'CaudexRegular';
-    src: url(/assets/Caudex-Regular-webfont.eot);
-    src: url(/assets/Caudex-Regular-webfont.eot?#iefix) format('embedded-opentype'),
-         url(/assets/Caudex-Regular-webfont.woff) format('woff'),
-         url(/assets/Caudex-Regular-webfont.ttf) format('truetype'),
-         url(/assets/Caudex-Regular-webfont.svg#CaudexRegular) format('svg');
+    font-family: 'OleoScriptRegular';
+    src: url(/assets/oleoscript-regular-webfont.eot);
+    src: url(/assets/oleoscript-regular-webfont.eot?#iefix) format('embedded-opentype'),
+         url(/assets/oleoscript-regular-webfont.woff) format('woff'),
+         url(/assets/oleoscript-regular-webfont.ttf) format('truetype'),
+         url(/assets/oleoscript-regular-webfont.svg#OleoScriptRegular) format('svg');
     font-weight: normal;
     font-style: normal;
 
 }
+
 
 
 
@@ -232,7 +233,7 @@ h1 {
   color: #73715b;
   }
   h2 { 
-  font-family: 'CaudexRegular', serif; 
+  font-family: 'OleoScriptRegular', serif; 
   font-weight: 100;
   line-height: 25px;
   font: normal;
