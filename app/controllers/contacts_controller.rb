@@ -10,7 +10,7 @@ class ContactsController < ApplicationController
       UserMailer.contact_email(@contact).deliver
       redirect_to('/', :notice => 'Message sent! Thank you for your feedback.')
     else
-      render :template => user_path(current_user)
+      render :template => user_books_path(current_user)
     end
   end
 end

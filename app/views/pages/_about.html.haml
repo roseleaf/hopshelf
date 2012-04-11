@@ -23,7 +23,7 @@
                   %a{:href => "/regions/#{current_user.region_id}"} Others Near You
               %li
                 - if current_user
-                  %a.linky= link_to "Go to Your Shelf", user_path(current_user.id)
+                  %a.linky= link_to "Go to Your Shelf", user_books_path(current_user.id)
 
       #content
         #header

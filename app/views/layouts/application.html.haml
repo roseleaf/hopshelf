@@ -23,7 +23,7 @@
                                 .nlnk
                                     %a{:href => "/regions/#{current_user.region_id}"} Others Nearby
                                 .nlnk
-                                    = link_to "Your Shelf", user_path(current_user.id)                        
+                                    = link_to "Your Shelf", user_books_path(current_user.id)                        
                                 .nlnk
                                     = link_to " Edit Profile ", edit_user_path(current_user.id)
                                 .nlnk

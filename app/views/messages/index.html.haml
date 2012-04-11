@@ -22,7 +22,7 @@
     = link_to 'Compose', new_message_user_path(@user)
   %BR
   .nlnk
-    = link_to 'Profile', user_path(@user)
+    = link_to 'Profile', user_books_path(@user)
     / %br/
     / - @messages.each do |message|
     /   %b

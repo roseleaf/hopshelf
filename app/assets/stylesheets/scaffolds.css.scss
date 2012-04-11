@@ -20,7 +20,20 @@ div {
     margin-bottom: 10px; } }
 
 #notice {
-  color: #73715B; }
+  color: #73715B;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;  
+  -moz-text-shadow:      1px 1px #5c5c5c;
+  -webkit-text-shadow:   1px 1px #5c5c5c;
+  text-shadow:           1px 1px #5c5c5c;
+  max-width: 250px;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
 
 .field_with_errors {
   padding: 2px;
@@ -32,11 +45,12 @@ div {
   }
 
 #error_explanation {
-  width: 450px;
+  width: 400px;
   border: 2px solid gray;
   padding: 7px;
   padding-bottom: 0;
   margin-bottom: 20px;
+  margin-top: 7px;
   background-color: #f0f0f0;
   border-radius: 9px;
   -moz-border-radius: 9px;

@@ -8,7 +8,7 @@
       - @users.each do |user|
         %tr
           / %td= user.username.capitalize
-          %td= link_to "#{user.username.capitalize}", user
+          %td= link_to "#{user.username.capitalize}", user_books_path(user)
           %br/
           %br/
       -if @users.empty?
