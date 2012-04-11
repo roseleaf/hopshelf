@@ -6,7 +6,8 @@
         prohibited this user from being saved:
       %ul
         - @user.errors.full_messages.each do |msg|
-          %li= msg        
+          %li= msg    
+  %br    
   %h2 The Essential Details        
   .field
     = f.label :username
@@ -39,8 +40,10 @@
   / /   / / = form_for @current_user, :url => user_path, :html => { :multipart => true } do |form|
   / /   / = f.file_field_for @current_user, :url => user_path, :html => { :multipart => true} do |form| :avatar
     
-
-  %h2.blip Optionally, create a little profile of yourself here   (You can do it later if you prefer, but you are right here!)
+  %br
+  %h2.blip A Little About You 
+  %p (This can be updated at any time)
+  %br
   .field
     = f.label "Interests, kind of things you read"
     %br/

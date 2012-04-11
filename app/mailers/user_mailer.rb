@@ -17,8 +17,7 @@ class UserMailer < ActionMailer::Base
     @account_activation_url = activate_account_url(user.perishable_token)
     # @url = activate_account_url(user.perishable_token)
     email_with_name = "#{@user.username} <#{@user.email}>"
-    mail(:to => email_with_name, :subject => "Success! You're in at Shelfwire
-    ") do |format| 
+    mail(:to => email_with_name, :subject => "Success! You're in at Shelfwire") do |format| 
       format.html
     end
   end
@@ -46,7 +45,7 @@ class UserMailer < ActionMailer::Base
 
   def new_message(message)
     @message = message
-    @url  = "http://localhost:3000/messages" #Change this when you have a name
+    @url  = "http://shelfwire.org/messages" 
     @sendername = @message.sender.username.capitalize
     @toname = @message.receiver.username.capitalize
     if message.book.present?
@@ -60,7 +59,7 @@ class UserMailer < ActionMailer::Base
 
   def new_comment(comment)
     @comment = comment
-    @url  = "http://localhost:3000/login" #Change this when you have a name
+    @url  = "http://shelfwire.org/login" 
     email_with_name = "#{@message.receiver.username} <#{@message.receiver.email}>"
     mail(:to => email_with_name, :subject => "You have a new comment on Shelfwire") do |format|
       format.html
@@ -70,7 +69,7 @@ class UserMailer < ActionMailer::Base
 
   def contact_email(contact)
     @contact = contact
-    @url = "http:localhost:3000/contact"
+    @url = "http:shelfwire.org/contact"
     email = "roseleaf.red@gmail.com"
     mail(:to => email, :subject => "Someone on Shelfwire has something to say") do |format|
       format.html

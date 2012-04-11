@@ -147,7 +147,9 @@ end
   # PUT /users/1.json
   def update
     if is_me? params[:id] || is_admin?
+      logger.info "-----------------"
       @user = User.find(params[:id])
+      logger.info "-----------------"
 
       respond_to do |format|
         if @user.update_attributes(params[:user])
