@@ -85,7 +85,7 @@ def create
 
   if @user.save
     UserMailer.activation_instructions(@user).deliver
-    flash[:notice] = "Your account has been created. Please check your e-mail for your account activation instructions!"
+    flash[:notice] = "Your account has been created. Please check your e-mail for your account activation instructions! You may close this window and follor the link in your email to sign in."
     redirect_to root_url
   else
     flash[:notice] = "There was a problem creating the user account"

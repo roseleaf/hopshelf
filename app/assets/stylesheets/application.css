@@ -119,6 +119,7 @@ a:hover{
   height: 27px;
   width: 100px;
   background-image: url(nlnk.png);
+  background-position: 0 0px;
   background-repeat: no-repeat;
   margin-top: -7px;
   border-radius: 4px;
@@ -134,8 +135,9 @@ a:hover{
   color: #333;
 }
 .nlnk:hover{
-  background-image: url(nhlink.png);
+  background-image: url(nlnk.png);
   background-repeat: no-repeat;
+  background-position: 0 -33px;
 }
 .dlnk{
   width: 200px;
