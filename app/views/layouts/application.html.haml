@@ -9,7 +9,8 @@
         = csrf_meta_tags
         %link{:rel=>"shortcut icon", :href=>"/assets/favicon.ico"}
     %body
-        #loginform{'class'=> $show_modal_login ? 'modal' : ''}
+        
+        #loginform{'class'=> show_modal_login ? 'modal' : ''}
             .closemodal
                 = link_to 'x', :root
 

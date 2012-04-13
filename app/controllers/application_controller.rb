@@ -3,17 +3,23 @@ class ApplicationController < ActionController::Base
   before_filter :create_login_user
   helper_method :current_user, :is_me?, :is_admin?
   #after_filter :store_location
-  #helper_method :modaloff
+  helper_method :show_modal_login
 
   private
 
     def create_login_user
-      $show_modal_login = false
       @user_session = UserSession.new
     end
 
-    def modaloff
-      $show_modal_login = false
+    def show_modal_login
+      logger.info session[:show_modal_login]
+      # Save the value of the sesison var
+      ret = session[:show_modal_login]
+      # Set the session var to false, for next time, so modals only show once
+      # I moved this from being inside create_login_user, because we only want to set show_modal_login
+      # to false, AFTER we get it's value, which could potentially have been set to true during require_user
+      session[:show_modal_login] = false
+      return ret
     end
 
     def store_location
@@ -44,7 +50,9 @@ class ApplicationController < ActionController::Base
       unless current_user
         store_location
         flash[:notice]="You must be logged in to view this page"
-        $show_modal_login = true
+        # Set the show modal session var to true!
+        session[:show_modal_login] = true
+        logger.info '--------------------- set modal true'
         redirect_to :root
         return false
       end
