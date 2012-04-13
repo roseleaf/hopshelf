@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   private
 
     def create_login_user
+      $show_modal_login = false
       @user_session = UserSession.new
     end
 
@@ -39,7 +40,7 @@ class ApplicationController < ActionController::Base
       unless current_user
         store_location
         flash[:notice]="You must be logged in to view this page"
-        $show_modal_login =true
+        $show_modal_login = true
         redirect_to :root
         return false
       end

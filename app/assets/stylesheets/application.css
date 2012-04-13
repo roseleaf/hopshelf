@@ -102,11 +102,12 @@ textarea{
 }
 
 
-a:hover{
+a:hover, .modal_login:hover{
   background-color: transparent !important;
   -moz-text-shadow:      1px 1px #333;
   -webkit-text-shadow:   1px 1px #333;
   text-shadow:           1px 1px #333;
+  color: white;
 }
 
 .nav{
@@ -120,7 +121,9 @@ a:hover{
   float: left;
   margin-left: 10px;
 }
-
+.modal_login{
+  cursor: pointer;
+}
 .nlnk{
   padding-top: 6px;
   text-align: center;
@@ -196,7 +199,7 @@ a:hover{
 .logo a{
   display: inline-block;
   height: 54px;
-  width: 245px;
+  width: 335px;
 }
 
 #maincontent {

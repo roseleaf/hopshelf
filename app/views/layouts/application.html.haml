@@ -9,7 +9,7 @@
         = csrf_meta_tags
         %link{:rel=>"shortcut icon", :href=>"/assets/favicon.ico"}
     %body
-        #loginform{'class'=>$show_modal_login ? 'modal' : ''}
+        #loginform{'class'=> $show_modal_login ? 'modal' : ''}
             = render "user_sessions/form"
         .wrapper    
             .header.fill
@@ -37,7 +37,7 @@
                                 .nlnk
                                     / = link_to " Login ", :login   
                                     %span.modal_login
-                                        login
+                                        Login
                             .nlnk
                                 = link_to " Contact ", :contacts_new
             #maincontent.fill 
