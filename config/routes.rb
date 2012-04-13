@@ -17,7 +17,6 @@ Hopshelf::Application.routes.draw do
   match 'forgot_password' => 'user_sessions#forgot_password', :as => :forgot_password, :via => :get
   match 'forgot_password' => 'user_sessions#forgot_password_lookup_email', :as => :forgot_password, :via => :post
   match '/:page' => 'public#page'
-  #match '/messages' => ""
 
 
   put 'reset_password/:reset_password_code' => 'users#reset_password_submit', :as => :reset_password, :via => :put
@@ -98,7 +97,6 @@ Hopshelf::Application.routes.draw do
   
   root :to => 'public#index'
   match 'about' => 'public#about'
-
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

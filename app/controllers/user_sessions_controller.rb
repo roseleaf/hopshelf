@@ -1,5 +1,7 @@
 class UserSessionsController < ApplicationController
-
+  #skip_after_filter :store_location
+  skip_before_filter :create_login_user, :only => :destroy
+  
   # GET /user_sessions/new
   # GET /user_sessions/new.xml
   def new
@@ -18,7 +20,7 @@ class UserSessionsController < ApplicationController
 
     respond_to do |format|
       if @user_session.save
-        format.html { redirect_to(:root) }
+        format.html { redirect_back_or_to(:root) }
         format.xml  { render :xml => @user_session, :status => :created, :location => @user_session }
       else
         format.html { render :action => "new" }

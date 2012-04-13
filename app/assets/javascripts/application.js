@@ -9,11 +9,16 @@
 //= require_tree .
 $(function(){  // $(document).ready shorthand
   $('.box').hide().fadeIn('slow');
-});
 
-$(function() {
   $('.genrebox, .shelflink, .genpic').hide().fadeIn('slow', function() {
     // Animation complete.
   });
+
+  $('.modal_login').click(function(){
+    $("#loginform").modal();
+
+  });
+  if($('#loginform.modal').length)
+    $('#loginform.modal').modal();
 });
 

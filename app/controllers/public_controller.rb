@@ -9,4 +9,6 @@ class PublicController < ApplicationController
     @page = params[:page]
   end
 
+
+
 end

@@ -5,10 +5,12 @@
         %title
             Shelfwire
         = stylesheet_link_tag "application"
-        = javascript_include_tag :defaults, "application"
+        = javascript_include_tag "application"
         = csrf_meta_tags
         %link{:rel=>"shortcut icon", :href=>"/assets/favicon.ico"}
     %body
+        #loginform{'class'=>$show_modal_login ? 'modal' : ''}
+            = render "user_sessions/form"
         .wrapper    
             .header.fill
                 .pice
@@ -33,7 +35,9 @@
                                 .nlnk
                                     = link_to " Register ", new_user_path
                                 .nlnk
-                                    = link_to " Login ", :login   
+                                    / = link_to " Login ", :login   
+                                    %span.modal_login
+                                        login
                             .nlnk
                                 = link_to " Contact ", :contacts_new
             #maincontent.fill 

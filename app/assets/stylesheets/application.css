@@ -65,6 +65,14 @@ textarea{
   margin-top: 6px; 
 
 }
+
+#loginform{
+  display: none;
+}
+#simplemodal-overlay {background-color:#000;}
+#simplemodal-container {background-color:#333; border:8px solid #444; padding:12px; color: #ccc;}
+
+
 .commentz{
   float: left;
   width: 600px !important;

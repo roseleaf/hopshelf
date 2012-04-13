@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
   before_filter :get_parent
+  before_filter :require_user 
+
   
   def new
     @comment = @parent.comments.build

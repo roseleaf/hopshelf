@@ -1,4 +1,7 @@
 class BooksController < ApplicationController
+  before_filter :require_user 
+
+
   # before_filter :get_book, :only => [:edit, :update, :destroy]
   # before_filter :check_auth, :only => [:edit, :update, :destroy]
 
@@ -6,12 +9,7 @@ class BooksController < ApplicationController
   #   @book = Book.find(params[:id])
   # end
 
-  # def check_auth
-  #   if session[:user_id] != @book.user_id
-  #     flash[:notice] = "Sorry, you can't edit someone else's items"
-  #     redirect_to books_path
-  #   end
-  # end
+
 
   def new
     @genres = Genre.all
