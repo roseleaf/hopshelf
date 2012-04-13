@@ -170,7 +170,12 @@ a:hover, .modal_login:hover{
   height: 31px;
   color: #333;
 }
-
+.closemodal{
+  height: 24px;
+  width: 8px;
+  margin-left: -8px;
+  margin-top: -15px;
+}
 
 .greet{
   margin-top: 0px;

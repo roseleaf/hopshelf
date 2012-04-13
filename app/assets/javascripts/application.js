@@ -18,6 +18,7 @@ $(function(){  // $(document).ready shorthand
     $("#loginform").modal();
 
   });
+
   if($('#loginform.modal').length)
     $('#loginform.modal').modal();
 });

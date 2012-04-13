@@ -10,7 +10,15 @@
         %link{:rel=>"shortcut icon", :href=>"/assets/favicon.ico"}
     %body
         #loginform{'class'=> $show_modal_login ? 'modal' : ''}
+            .closemodal
+                = link_to 'x', :root
+
             = render "user_sessions/form"
+            
+            = link_to 'Dang it I forgot my password', forgot_password_path
+            %br/
+
+
         .wrapper    
             .header.fill
                 .pice

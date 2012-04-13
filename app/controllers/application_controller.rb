@@ -3,12 +3,17 @@ class ApplicationController < ActionController::Base
   before_filter :create_login_user
   helper_method :current_user, :is_me?, :is_admin?
   #after_filter :store_location
+  #helper_method :modaloff
 
   private
 
     def create_login_user
       $show_modal_login = false
       @user_session = UserSession.new
+    end
+
+    def modaloff
+      $show_modal_login = false
     end
 
     def store_location
@@ -36,7 +41,6 @@ class ApplicationController < ActionController::Base
 
 
     def require_user
-      $show_modal_login = false
       unless current_user
         store_location
         flash[:notice]="You must be logged in to view this page"
