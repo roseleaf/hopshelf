@@ -139,7 +139,7 @@ a:hover, .modal_login:hover{
   float: left;
   margin-right: 2px;
 }
-.nlnk a{
+.nlnk a, .modal_login{
   display: inline-block;
   height: 25px;
   width: 100px;
