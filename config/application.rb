@@ -48,6 +48,9 @@ module Hopshelf
     #Needs to be changed once you have a domain/host
     config.action_mailer.default_url_options = { :host => "localhost:3000" }
     
+    if Rails.env == "production"
+        config.middleware.use("Rack::GoogleAnalytics", :web_property_id => "UA-30885493-1")
+    end
 
   end
 end
