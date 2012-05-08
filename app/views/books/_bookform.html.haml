@@ -23,7 +23,11 @@
     %br/
   .field
     = collection_select(:book, :genre_id, Genre.all, :id, :name, :prompt => true)
-  
+  .field
+    = f.label :status
+    %br/
+    =f.select :status,  :Select => ["For Sale", "Will Lend", "For Trade", "Will Donate", "Currently Unavailable"]
+
 
   .field
     = f.label :text, "Brief Description"

@@ -13,6 +13,7 @@ role :app, "173.230.146.14"                          # This may be the same as y
 role :db,  "173.230.146.14", :primary => true # This is where Rails migrations will run
 
 require "bundler/capistrano"
+load 'deploy/assets'
 
 set :user, "rose"
 set :use_sudo, false
@@ -20,8 +21,8 @@ set :use_sudo, false
 namespace :deploy do
  task :cold do       # Overriding the default deploy:cold
   update
-  run "cd #{current_path}; rake assets:precompile --trace"
-  load_schema       # My own step, replacing migrations.
+  run "cd #{current_path}"
+  load_schema       
   start
  end
  
@@ -35,7 +36,7 @@ namespace :deploy do
  
  task :restart, :roles => :app, :except => { :no_release => true } do
    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-   run "cd #{current_path}; rake assets:precompile --trace"
+   run "cd #{current_path}"
    migrate
  end
 end

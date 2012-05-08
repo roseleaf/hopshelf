@@ -62,13 +62,21 @@ h1{
   height: 100%;
 }
 
-.request{
-  height: 77px;
+.request, .status{
+  height: 78px;
   width: 130px;
   float: left;
   margin-left: 20px;
   text-align: center;
+  margin-top: 15px;
 }
+.status h3{
+  margin-top: 19px;
+}
+.request{
+  border: 3px solid #bab9ae;
+}
+
 .request a{
   display: inline-block;
   height: 112px;
@@ -76,6 +84,7 @@ h1{
 }
 .request h2{
   line-height: 1 !important;
+  margin-top: 10px;
 }
 
 .bookname{

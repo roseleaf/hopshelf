@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120319232557) do
+ActiveRecord::Schema.define(:version => 20120507232936) do
 
   create_table "books", :force => true do |t|
     t.integer  "poster_id"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20120319232557) do
     t.integer  "genre_id"
     t.text     "postername"
     t.string   "postermail"
+    t.string   "status"
   end
 
   create_table "comments", :force => true do |t|

@@ -6,8 +6,8 @@ Hopshelf::Application.routes.draw do
   match 'users/:user_id/books/' => 'users#books', :as => :user_books
   match 'regions/:id' => 'regions#users', :as => :user_regions
   match 'books/:book_id/message/' => 'messages#new', :as => :new_message_book
-  match 'users/:user_id/message/' => 'messages#index', :as => :message_user
-  match 'users/:user_id/message/new' => 'messages#new', :as => :new_message_user
+  # match 'users/:user_id/message/' => 'messages#index', :as => :message_user
+  # match 'users/:user_id/message/new' => 'messages#new', :as => :new_user_message
   match 'books/:id/' => 'comment#new', :as => :comment_book
   match 'deletecom' => 'books#destroy', :as => :deletebk
   match 'contact' => 'contacts#new', :as => :contacts_new
@@ -32,7 +32,11 @@ Hopshelf::Application.routes.draw do
     resources :comments
   end
   
+  resources :users do
+    resources :messages
+  end
 
+  
 
 
 

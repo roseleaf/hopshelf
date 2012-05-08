@@ -12,11 +12,15 @@
     %br/
     %br/
     %a{:href => "/users/#{@book.poster_id}/books"} See this item on the bookshelf
-
+  
+  .box.status
+    %h3 This book:
+    =@book.status
   .request.box.clearfix
     /=link_to 'Request to Borrow This Book!', :new_message_book
     %a{:href => "/books/#{@book.id}/message"}
       %h2 Request to Borrow This Book!
+
   .deso
     %h3 Owner's Description:
     = @book.description

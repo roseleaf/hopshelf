@@ -1,0 +1,32 @@
+contactmail.php
+
+<?php
+if(($_POST['fname']=='') || ($_POST['email']==''))
+{
+  header('location:contactus.html');
+  exit();
+}
+
+      $headers = "Content-type: text/html"."\r\n";
+      $headers .= "MIME-Version: 1.0"."\r\n";
+      $headers .= "X-Priority: 1"."\r\n";
+      $headers .= "X-MSMail-Priority: High"."\r\n";
+      $headers .= "From: Java Security Inc<noreply@bayareaguards.com>"."\r\n";
+
+      $to="sales@rentguards.com";
+      $subject = "Java Security Customer Inquiry";
+      $body ="<html><body><font face='Calibri'>Dear Admin,<br />You have received a new feedback from a visitior. The details of the feedback and visitor are given below : <hr size='1' width='30%' align='left'>First Name : ".$_POST['fname']."<br />Company : ".$_POST['company']."<br />Email : ".$_POST['email']."<br />Phone : ".$_POST['phone']."<br />Address 1 : ".$_POST['address1']."<br />City : ".$_POST['city']."<br />State : ".$_POST['state']."<br />Zipcode : ".$_POST['zip']."<br />Comments : ".nl2br($_POST['comments'])."</font></body></html>";
+            
+      mail($to, $subject, $body, $headers);
+
+
+header('location:thankyou.html');
+?>
+
+
+
+
+
+contactus.html
+
+
